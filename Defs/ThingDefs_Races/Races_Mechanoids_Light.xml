@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+
+    <!-- Militor -->    
+    <ThingDef ParentName="LightMechanoid">
+      <defName>Mech_Militor</defName>
+      <label>militor</label>
+      <description>A small combat mechanoid armed with a low-power mini-shotgun. Roughly four feet tall, militors lack the power, range, and toughness of more senior combat mechs. However, it is cheap to gestate and maintain, and so is often used as a rear guard or swarm attacker.\n\nIn war, mech armies are known to send militors into urban ruins to hunt down survivors after breaking the human defenses. For this reason, they are considered by some to be the most cruel of all mechanoid patterns.</description>
+      <statBases>
+        <MoveSpeed>7.8</MoveSpeed>
+      </statBases>
+      <race>
+        <lifeStageAges>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>0</minAge>
+            <soundWounded>Pawn_Mech_Militor_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Militor_Death</soundDeath>
+            <soundCall>Pawn_Mech_Militor_Call</soundCall>
+          </li>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>100</minAge>
+            <soundWounded>Pawn_Mech_Militor_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Militor_Death</soundDeath>
+            <soundCall>Pawn_Mech_Militor_Call</soundCall>
+          </li>
+        </lifeStageAges>
+      </race>
+	   <butcherProducts>
+			<CarbonAlloy>1</CarbonAlloy>
+		</butcherProducts>
+    </ThingDef>
+  
+    <PawnKindDef ParentName="LightMechanoidKind">
+      <defName>Mech_Militor</defName>
+      <label>militor</label>
+      <race>Mech_Militor</race>
+      <combatPower>45</combatPower>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Militor</texPath>
+            <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Mech_Slugger</maskPath>
+            <shaderType>CutoutWithOverlay</shaderType>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.25</drawSize>
+            <shadowData>
+              <volume>(0.3, 0.4, 0.3)</volume>
+              <offset>(0,0,-0.25)</offset>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/MilitorAncient</texPath>
+            <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Mech_Slugger</maskPath>
+            <shaderType>CutoutWithOverlay</shaderType>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.25</drawSize>
+            <shadowData>
+              <volume>(0.3, 0.4, 0.3)</volume>
+              <offset>(0,0,-0.25)</offset>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+      <weaponTags>
+        <li>MechanoidGunShortRange</li>
+      </weaponTags>
+    </PawnKindDef>
+    
+    <!-- Lifter -->  
+    <ThingDef ParentName="LightMechanoid">
+      <defName>Mech_Lifter</defName>
+      <label>lifter</label>
+      <description>A small mechanoid designed for hauling. Lacking a ranged weapon, it can make only weak melee attacks.</description>
+      <statBases>
+        <MoveSpeed>6.8</MoveSpeed>
+      </statBases>
+      <race>
+        <mechEnabledWorkTypes>
+          <li>Hauling</li>
+        </mechEnabledWorkTypes>
+        <lifeStageAges>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>0</minAge>
+            <soundWounded>Pawn_Mech_Lifter_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Lifter_Death</soundDeath>
+            <soundCall>Pawn_Mech_Lifter_Call</soundCall>
+          </li>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>100</minAge>
+            <soundWounded>Pawn_Mech_Lifter_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Lifter_Death</soundDeath>
+            <soundCall>Pawn_Mech_Lifter_Call</soundCall>
+          </li>
+        </lifeStageAges>
+      </race>
+	   <butcherProducts>
+			<CarbonAlloy>1</CarbonAlloy>
+		</butcherProducts>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>Mech_Lifter</defName>
+      <label>lifter</label>
+      <race>Mech_Lifter</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
+            <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Mech_Liftman</maskPath>
+            <shaderType>CutoutWithOverlay</shaderType>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
+            <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Mech_Liftman</maskPath>
+            <shaderType>CutoutWithOverlay</shaderType>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+    </PawnKindDef>
+
+
+
+
+
+
+
+
+  <ThingDef ParentName="LightMechanoid">
+      <defName>Mech_WarBomb</defName>
+      <label>Крикун</label>
+      <description>В каждом маленьком #[ДАННЫЕ ЗАСЕКРЕЧЕНЫ]#
+И в #[ДАННЫЕ ЗАСЕКРЕЧЕНЫ]# и в #[ДАННЫЕ ЗАСЕКРЕЧЕНЫ]#
+Есть по двести грамм взрывчатки
+Или даже полкило!
+Должен он бежать и прыгать
+Все кромсать, пилою дрыгать
+А иначе он взорвется, трах-бабах!
+И нет его!</description>
+      <statBases>
+        <MoveSpeed>6.2</MoveSpeed>
+		<ArmorRating_Blunt>12</ArmorRating_Blunt>
+			<ArmorRating_Sharp>4</ArmorRating_Sharp>
+			<MeleeDodgeChance>0.05</MeleeDodgeChance>
+			<MeleeCritChance>0</MeleeCritChance>
+      </statBases>
+	   <tools>
+	   <li Class="CombatExtended.ToolCE">
+					<label>Пила</label>
+					<capacities>
+						<li>Cut</li>
+					</capacities>
+					<power>36</power>
+					<cooldownTime>0.85</cooldownTime>
+					<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+					<chanceFactor>0.1</chanceFactor>
+					<armorPenetrationSharp>5</armorPenetrationSharp>
+		     		<armorPenetrationBlunt>15</armorPenetrationBlunt>
+				</li>
+					<li Class="CombatExtended.ToolCE">
+					<label>Шипы</label>
+					<capacities>
+						<li>Demolish</li>
+					</capacities>
+					<power>27</power>
+					<cooldownTime>3.0</cooldownTime>
+					<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+					<armorPenetrationSharp>5</armorPenetrationSharp>
+		     		<armorPenetrationBlunt>15</armorPenetrationBlunt>
+					<chanceFactor>0.2</chanceFactor>
+				</li>
+         </tools>
+      <race>
+	   <deathActionWorkerClass>DeathActionWorker_BigExplosion</deathActionWorkerClass>
+        <lifeStageAges>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>0</minAge>
+            <soundWounded>Pawn_Mech_WarUrchin_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_WarUrchin_Death</soundDeath>
+            <soundCall>Pawn_Mech_WarUrchin_Call</soundCall>
+          </li>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>10</minAge>
+            <soundWounded>Pawn_Mech_WarUrchin_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_WarUrchin_Death</soundDeath>
+            <soundCall>Pawn_Mech_WarUrchin_Call</soundCall>
+          </li>
+        </lifeStageAges>
+        <thinkTreeConstant>WarUrchinConstant</thinkTreeConstant>
+        <baseHealthScale>1.3</baseHealthScale>
+      </race>
+      <comps Inherit="False">
+        <li Class="CompProperties_CanBeDormant" />
+        <li Class="CompProperties_WakeUpDormant">
+          <wakeUpOnDamage>true</wakeUpOnDamage>
+          <wakeUpCheckRadius>30</wakeUpCheckRadius>
+          <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
+        </li>
+		      <li Class="CompProperties_Explosive">
+        <wickTicks>0</wickTicks>
+        <explosiveRadius>2.9</explosiveRadius>
+        <explodeOnKilled>true</explodeOnKilled>
+        <explosiveDamageType>BombSuper</explosiveDamageType>
+        <propagationSpeed>0.5</propagationSpeed>
+        <chanceNeverExplodeFromDamage>1</chanceNeverExplodeFromDamage>
+        <extraInspectStringKey>MechStunPulseWarning</extraInspectStringKey>
+      </li>
+        <li Class="CompProperties_MechPowerCell">
+          <totalPowerTicks>10000</totalPowerTicks>
+        </li>
+      </comps>
+	  <butcherProducts>
+			<CarbonAlloy>1</CarbonAlloy>
+		</butcherProducts>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="LightMechanoidKind">
+      <defName>Mech_WarBomb</defName>
+      <label>Крикуны</label>
+      <labelPlural>Крикунов</labelPlural>
+      <race>Mech_WarBomb</race>
+      <allowInMechClusters>false</allowInMechClusters>
+      <forceNoDeathNotification>true</forceNoDeathNotification>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Skrimer</texPath>
+				
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1</drawSize>
+            <shadowData>
+              <volume>(0.2, 0.3, 0.2)</volume>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Skrimer</texPath>
+				
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>0.6</drawSize>
+            <shadowData>
+              <volume>(0.2, 0.3, 0.2)</volume>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>      
+    </PawnKindDef>
+
+    <!-- Militor -->    
+    <ThingDef ParentName="LightMechanoid">
+      <defName>Mech_ServoScul</defName>
+      <label>Серво-череп</label>
+      <description>Сервочереп — робототехническое устройство, похожее на беспилотный аппарат, созданный из человеческого черепа, снабжённый электронными или кибернетическими компонентами, которые управляют встроенными антигравитационными генераторами, что позволяет сервочерепу самостоятельно парить и передвигаться в пространстве. Они создаются из черепов преданных слуг Империума, позволяя тем самым служить и после своей смерти. Быть выбранным для модификации сервочерепа в Империуме считается большой честью, так как доказывает, что служба адепта при жизни была достаточно усердна для продолжения её после смерти.</description>
+      <statBases>
+        <MoveSpeed>3.8</MoveSpeed>
+		<ArmorRating_Blunt>12</ArmorRating_Blunt>
+			<ArmorRating_Sharp>4</ArmorRating_Sharp>
+			<MeleeDodgeChance>0.05</MeleeDodgeChance>
+			<MeleeCritChance>0</MeleeCritChance>
+      </statBases>
+	    <tools>
+	   <li Class="CombatExtended.ToolCE">
+					<label>Пила</label>
+					<capacities>
+						<li>Cut</li>
+					</capacities>
+					<power>36</power>
+					<cooldownTime>0.85</cooldownTime>
+					<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+					<chanceFactor>0.1</chanceFactor>
+					<armorPenetrationSharp>5</armorPenetrationSharp>
+		     		<armorPenetrationBlunt>15</armorPenetrationBlunt>
+				</li>
+					<li Class="CombatExtended.ToolCE">
+					<label>Шипы</label>
+					<capacities>
+						<li>Demolish</li>
+					</capacities>
+					<power>27</power>
+					<cooldownTime>3.0</cooldownTime>
+					<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+					<armorPenetrationSharp>5</armorPenetrationSharp>
+		     		<armorPenetrationBlunt>15</armorPenetrationBlunt>
+					<chanceFactor>0.2</chanceFactor>
+				</li>
+         </tools>
+      <race>
+	   <mechEnabledWorkTypes>
+          <li>Cleaning</li>
+            <li>Doctor</li>
+          <li>Cooking</li>
+        </mechEnabledWorkTypes>
+        <lifeStageAges>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>0</minAge>
+            <soundWounded>Pawn_Mech_Militor_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Militor_Death</soundDeath>
+            <soundCall>Pawn_Mech_Militor_Call</soundCall>
+          </li>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>100</minAge>
+            <soundWounded>Pawn_Mech_Militor_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Militor_Death</soundDeath>
+            <soundCall>Pawn_Mech_Militor_Call</soundCall>
+          </li>
+        </lifeStageAges>
+      </race>
+	   <comps>
+	  <li Class="CombatExtended.CompProperties_ArmorDurability">
+				<Durability>1000</Durability>
+				<Regenerates>true</Regenerates>
+				<RegenInterval>1250</RegenInterval>
+				<RegenValue>5</RegenValue>
+				<Repairable>true</Repairable>
+				<RepairIngredients>
+					<TitaniumBar>4</TitaniumBar>
+					<CarbonAlloy>4</CarbonAlloy>
+				</RepairIngredients>
+				<RepairTime>300</RepairTime>
+				<RepairValue>200</RepairValue>
+				<CanOverHeal>true</CanOverHeal>
+				<MaxOverHeal>100</MaxOverHeal>
+				<MinArmorPct>0.75</MinArmorPct>
+			</li>
+			  </comps>
+	  <butcherProducts>
+			<TitaniumBar>4</TitaniumBar>
+			<DepletedUranium>5</DepletedUranium>
+			<CarbonAlloy>4</CarbonAlloy>
+		</butcherProducts>
+    </ThingDef>
+  
+    <PawnKindDef ParentName="LightMechanoidKind">
+      <defName>Mech_ServoScul</defName>
+      <label>Серво-череп</label>
+      <race>Mech_ServoScul</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Servo</texPath>
+				
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.25</drawSize>
+            <shadowData>
+              <volume>(0.3, 0.4, 0.3)</volume>
+              <offset>(0,0,-0.25)</offset>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Servo</texPath>
+				
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.25</drawSize>
+            <shadowData>
+              <volume>(0.3, 0.4, 0.3)</volume>
+              <offset>(0,0,-0.25)</offset>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+	    <abilities>
+        <li>FirefoampopMech</li>
+        <li>LongjumpMechLauncher</li>
+      </abilities>
+      <weaponTags>
+       <li>Gun</li>
+      </weaponTags>
+	   <modExtensions>
+            <li Class="CombatExtended.LoadoutPropertiesExtension">
+                <primaryMagazineCount>
+                    <min>4</min>
+                    <max>5</max>
+                </primaryMagazineCount>
+            </li>
+        </modExtensions>
+    </PawnKindDef>
+    
+  
+
+ <ThingDef ParentName="LightMechanoid">
+    <defName>Mech_Brain</defName>
+    <label>РобоМозг</label>
+    <description>Многоцелевой кибернетический организм, в котором вместо процессора используется мозг человека или шимпанзе. Создан для военных и гражданских целей до Великой войны компанией «Римворлд Атомикс Интернешнл». Превосходит большинство других роботов, так как органический мозг предоставляет ему более широкий спектр функций по сравнению с другими роботами.</description>
+    <statBases>
+      <MarketValue>1600</MarketValue>
+      <MoveSpeed>4.2</MoveSpeed>
+      <EnergyShieldRechargeRate>0.45</EnergyShieldRechargeRate>
+      <EnergyShieldEnergyMax>2.5</EnergyShieldEnergyMax>
+      <BandwidthCost>1</BandwidthCost>
+      <ControlTakingTime>18</ControlTakingTime>
+      <EMPResistance>0.95</EMPResistance>
+	  <ArmorRating_Blunt>12</ArmorRating_Blunt>
+			<ArmorRating_Sharp>4</ArmorRating_Sharp>
+			<MeleeDodgeChance>0.05</MeleeDodgeChance>
+			<MeleeCritChance>0</MeleeCritChance>
+    </statBases>
+	  <tools>
+	   <li Class="CombatExtended.ToolCE">
+					<label>Пила</label>
+					<capacities>
+						<li>Cut</li>
+					</capacities>
+					<power>36</power>
+					<cooldownTime>0.85</cooldownTime>
+					<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+					<chanceFactor>0.1</chanceFactor>
+					<armorPenetrationSharp>5</armorPenetrationSharp>
+		     		<armorPenetrationBlunt>15</armorPenetrationBlunt>
+				</li>
+					<li Class="CombatExtended.ToolCE">
+					<label>Шипы</label>
+					<capacities>
+						<li>Demolish</li>
+					</capacities>
+					<power>27</power>
+					<cooldownTime>3.0</cooldownTime>
+					<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+					<armorPenetrationSharp>5</armorPenetrationSharp>
+		     		<armorPenetrationBlunt>15</armorPenetrationBlunt>
+					<chanceFactor>0.2</chanceFactor>
+				</li>
+         </tools>
+    <race>
+	     <mechEnabledWorkTypes>
+          <li>Cleaning</li>
+		   <li>Hauling</li>
+		    <li>Crafting</li>
+          <li>Smithing</li>
+          <li>Tailoring</li>
+          <li>Cooking</li>
+        </mechEnabledWorkTypes>
+      <body>Apocriton</body>
+      <lifeStageAges Inherit="False">
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Apocriton_Wounded</soundWounded>
+          <soundAngry>Pawn_Mech_Apocriton_Call</soundAngry>
+          <soundDeath>Pawn_Mech_Apocriton_Death</soundDeath>
+          <soundCall>Pawn_Mech_Apocriton_Call</soundCall>
+        </li>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>100</minAge>
+          <soundWounded>Pawn_Mech_Apocriton_Wounded</soundWounded>
+          <soundAngry>Pawn_Mech_Apocriton_Call</soundAngry>
+          <soundDeath>Pawn_Mech_Apocriton_Death</soundDeath>
+          <soundCall>Pawn_Mech_Apocriton_Call</soundCall>
+        </li>
+      </lifeStageAges>
+      <baseHealthScale>3.3</baseHealthScale>
+      <soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+      <soundAmbience>Pawn_Mech_Apocriton_Ambience</soundAmbience>
+    </race>
+	   <comps>
+	  <li Class="CombatExtended.CompProperties_ArmorDurability">
+				<Durability>1000</Durability>
+				<Regenerates>true</Regenerates>
+				<RegenInterval>1250</RegenInterval>
+				<RegenValue>5</RegenValue>
+				<Repairable>true</Repairable>
+				<RepairIngredients>
+					<TitaniumBar>4</TitaniumBar>
+					<CarbonAlloy>4</CarbonAlloy>
+				</RepairIngredients>
+				<RepairTime>300</RepairTime>
+				<RepairValue>200</RepairValue>
+				<CanOverHeal>true</CanOverHeal>
+				<MaxOverHeal>100</MaxOverHeal>
+				<MinArmorPct>0.75</MinArmorPct>
+			</li>
+			  </comps>
+    
+  
+   <butcherProducts>
+			<TitaniumBar>4</TitaniumBar>
+			<DepletedUranium>5</DepletedUranium>
+			<CarbonAlloy>4</CarbonAlloy>
+		</butcherProducts>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="LightMechanoidKind">
+    <defName>Mech_Brain</defName>
+    <label>РобоМозг</label>
+    <race>Mech_Brain</race>
+	<combatPower>100</combatPower>
+    <maxPerGroup>3</maxPerGroup>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/Brainmeh</texPath>
+		  	
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/Brainmeh</texPath>
+		  	
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags>
+       <li>Gun</li>
+    </weaponTags>
+	 <modExtensions>
+            <li Class="CombatExtended.LoadoutPropertiesExtension">
+                <primaryMagazineCount>
+                    <min>4</min>
+                    <max>5</max>
+                </primaryMagazineCount>
+            </li>
+        </modExtensions>
+    <techHediffsChance>1</techHediffsChance>
+    <techHediffsMoney>9999~9999</techHediffsMoney>
+    <skipResistant>true</skipResistant>
+	
+  </PawnKindDef>
+  
+  
+  
+  
+  
+  <ThingDef ParentName="LightMechanoid">
+    <defName>Mech_TR</defName>
+    <label>РобоТрактирщик</label>
+    <description>Едкое описание за заслуги.</description>
+    <statBases>
+      <MarketValue>1600</MarketValue>
+      <MoveSpeed>3.2</MoveSpeed>
+      <EnergyShieldRechargeRate>0.45</EnergyShieldRechargeRate>
+      <EnergyShieldEnergyMax>2.5</EnergyShieldEnergyMax>
+      <BandwidthCost>2</BandwidthCost>
+      <ControlTakingTime>18</ControlTakingTime>
+      <EMPResistance>0.65</EMPResistance>
+	  <ArmorRating_Blunt>12</ArmorRating_Blunt>
+			<ArmorRating_Sharp>4</ArmorRating_Sharp>
+			<MeleeDodgeChance>0.05</MeleeDodgeChance>
+			<MeleeCritChance>0</MeleeCritChance>
+    </statBases>
+    <race>
+	     <mechEnabledWorkTypes>
+          <li>Cleaning</li>
+		   <li>Hauling</li>
+          <li>Cooking</li>
+        </mechEnabledWorkTypes>
+      <body>Apocriton</body>
+      <lifeStageAges Inherit="False">
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Apocriton_Wounded</soundWounded>
+          <soundAngry>Pawn_Mech_Apocriton_Call</soundAngry>
+          <soundDeath>Pawn_Mech_Apocriton_Death</soundDeath>
+          <soundCall>Pawn_Mech_Apocriton_Call</soundCall>
+        </li>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>100</minAge>
+          <soundWounded>Pawn_Mech_Apocriton_Wounded</soundWounded>
+          <soundAngry>Pawn_Mech_Apocriton_Call</soundAngry>
+          <soundDeath>Pawn_Mech_Apocriton_Death</soundDeath>
+          <soundCall>Pawn_Mech_Apocriton_Call</soundCall>
+        </li>
+      </lifeStageAges>
+      <baseHealthScale>3.3</baseHealthScale>
+      <soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+      <soundAmbience>Pawn_Mech_Apocriton_Ambience</soundAmbience>
+    </race>
+	   <comps>
+	  <li Class="CombatExtended.CompProperties_ArmorDurability">
+				<Durability>1000</Durability>
+				<Regenerates>true</Regenerates>
+				<RegenInterval>1250</RegenInterval>
+				<RegenValue>5</RegenValue>
+				<Repairable>true</Repairable>
+				<RepairIngredients>
+					<TitaniumBar>4</TitaniumBar>
+					<CarbonAlloy>4</CarbonAlloy>
+				</RepairIngredients>
+				<RepairTime>300</RepairTime>
+				<RepairValue>200</RepairValue>
+				<CanOverHeal>true</CanOverHeal>
+				<MaxOverHeal>100</MaxOverHeal>
+				<MinArmorPct>0.75</MinArmorPct>
+			</li>
+			  </comps>
+     <tools>
+	   <li Class="CombatExtended.ToolCE">
+					<label>Пила</label>
+					<capacities>
+						<li>Cut</li>
+					</capacities>
+					<power>36</power>
+					<cooldownTime>0.85</cooldownTime>
+					<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+					<chanceFactor>0.1</chanceFactor>
+					<armorPenetrationSharp>5</armorPenetrationSharp>
+		     		<armorPenetrationBlunt>15</armorPenetrationBlunt>
+				</li>
+					<li Class="CombatExtended.ToolCE">
+					<label>Шипы</label>
+					<capacities>
+						<li>Demolish</li>
+					</capacities>
+					<power>27</power>
+					<cooldownTime>3.0</cooldownTime>
+					<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+					<armorPenetrationSharp>5</armorPenetrationSharp>
+		     		<armorPenetrationBlunt>15</armorPenetrationBlunt>
+					<chanceFactor>0.2</chanceFactor>
+				</li>
+         </tools>
+   <butcherProducts>
+			<TitaniumBar>4</TitaniumBar>
+			<DepletedUranium>5</DepletedUranium>
+			<CarbonAlloy>4</CarbonAlloy>
+		</butcherProducts>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="LightMechanoidKind">
+    <defName>Mech_TR</defName>
+    <label>РобоТрактирщик</label>
+    <race>Mech_TR</race>
+	<combatPower>70</combatPower>
+    <maxPerGroup>1</maxPerGroup>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/TR</texPath>
+		  	
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/TR</texPath>
+		  	
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags>
+      <li>AssaultRifle</li>
+    </weaponTags>
+	 <modExtensions>
+            <li Class="CombatExtended.LoadoutPropertiesExtension">
+                <primaryMagazineCount>
+                    <min>4</min>
+                    <max>5</max>
+                </primaryMagazineCount>
+            </li>
+        </modExtensions>
+    <techHediffsChance>1</techHediffsChance>
+    <techHediffsMoney>9999~9999</techHediffsMoney>
+    <skipResistant>true</skipResistant>
+	
+  </PawnKindDef>
+</Defs>

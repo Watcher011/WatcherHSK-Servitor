@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RecipeDef Name="MediumMechanoidRecipe" ParentName="BaseMechanoidRecipe" Abstract="True">
+    <gestationCycles>2</gestationCycles>
+    <researchPrerequisite>StandardMechtech</researchPrerequisite>
+  </RecipeDef>
+
+  <RecipeDef ParentName="MediumMechanoidRecipe">
+    <defName>PlasmaServetor</defName>
+    <label>Сборка уничтожителя</label>
+    <description>Жуткая платформа что пораждает роботов</description>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plastic</li>
+          </thingDefs>
+        </filter>
+        <count>75</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>175</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ServitorPak</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreRegular</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <Mech_Servitor_plasma>1</Mech_Servitor_plasma>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Mech_Servitor_plasma</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+
+   <RecipeDef ParentName="LightMechanoidRecipe">
+    <defName>BrainMeh</defName>
+    <label>РобоМозг</label>
+    <description>Ваш любимый колонист/пленник/раб неизлечимо болен ? Вы испытываете к нему сильную привязанность ? Смерть это только временно! Используйте знания для создания РобоМозга ! Маленький шустрый помощник для вашей колонии со знакомой личностью(В зависимости от настроек мозг можно заставить страдать ,что превратит его существование в ад).</description>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plastic</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>15</count>
+      </li>
+
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Skull</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+	   <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreBasic</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <products>
+      <Mech_Brain>1</Mech_Brain>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Mech_Brain</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef> 
+
+
+
+
+
+ <RecipeDef ParentName="LightMechanoidRecipe">
+    <defName>ServoMeh</defName>
+    <label>Серво-череп</label>
+    <description>Сервочереп — робототехническое устройство, похожее на беспилотный аппарат, созданный из человеческого черепа, снабжённый электронными или кибернетическими компонентами, которые управляют встроенными антигравитационными генераторами, что позволяет сервочерепу самостоятельно парить и передвигаться в пространстве. Они создаются из черепов преданных слуг Империума, позволяя тем самым служить и после своей смерти. Быть выбранным для модификации сервочерепа в Империуме считается большой честью, так как доказывает, что служба адепта при жизни была достаточно усердна для продолжения её после смерти.</description>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plastic</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreBasic</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Skull</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <products>
+      <Mech_ServoScul>1</Mech_ServoScul>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Mech_ServoScul</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef> 
+  
+  
+  <RecipeDef ParentName="MediumMechanoidRecipe">
+    <defName>RoboTractir</defName>
+    <label>Сборка Робота Трактиршика</label>
+    <description>Мистер Трактирщик — это весьма яркий представитель серийной модели человекоподобных роботов, тщательно производимой и массово выпускаемой по всей территории довоенной Эквестрии. Роли Официанта, Барменна, личного телохранителя или даже повара – далеко не всё то, с чем мог наипрекраснейшим образом справляться Мистер Трактирщик.</description>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plastic</li>
+          </thingDefs>
+        </filter>
+        <count>85</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>45</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ServitorPak</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+    </ingredients>
+    <products>
+      <Mech_TR>1</Mech_TR>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Mech_TR</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+</Defs>

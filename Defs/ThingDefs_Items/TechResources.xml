@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+
+<Defs>
+
+
+	
+	<ThingDef ParentName="ResourceBase">
+		<defName>ServitorPak</defName>
+		<label>Сервитор</label>
+		<description>Машины-полурабы из плоти и металла, существа без индивидуального разума, которые повинуются запрограммированным командам без лишних вопросов</description>
+		<graphicData>
+			<texPath>Things/Building/Turrets/ServitorPak</texPath>
+		    <graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1,2)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+		</graphicData>
+		<size>(1,2)</size>
+		<fillPercent>0.35</fillPercent>
+		<stackLimit>1</stackLimit>
+		<useHitPoints>true</useHitPoints>
+		<techLevel>Spacer</techLevel>
+		<statBases>
+			<MaxHitPoints>400</MaxHitPoints>
+			<MarketValue>350</MarketValue>
+			<DeteriorationRate>0.32</DeteriorationRate>
+			<Flammability>5</Flammability>
+			<Mass>60.1</Mass>
+			<Bulk>4.1</Bulk>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<comps>
+			 <li Class="CompProperties_Glower">
+				<glowRadius>2</glowRadius>
+				<glowColor>(255,100,100,0)</glowColor>
+			</li>
+		</comps>
+		<thingCategories>
+			 <li>WeaponsRanged</li>
+		</thingCategories>
+	</ThingDef>
+ 
+</Defs>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<!-- =============== Carl Gustav Shell =============== -->
+   <CombatExtended.AmmoCategoryDef>
+    <defName>HellF</defName>
+    <label>Слёзы солнца</label>
+    <labelShort>CC</labelShort>
+    <description>Дикая смесь из химикатов что горит как плазма.</description>
+  </CombatExtended.AmmoCategoryDef>
+
+ <CombatExtended.AmmoCategoryDef>
+    <defName>LasA</defName>
+    <label>Стандартная лазерная батарея(ожог)</label>
+    <labelShort>BT</labelShort>
+    <description>Энерго ячейка.</description>
+  </CombatExtended.AmmoCategoryDef>
+  
+  <CombatExtended.AmmoCategoryDef>
+    <defName>LasB</defName>
+    <label>Ионизированная лазерная батарея(рад)</label>
+    <labelShort>EL</labelShort>
+    <description>Энерго ячейка.</description>
+  </CombatExtended.AmmoCategoryDef>
+  
+  <CombatExtended.AmmoCategoryDef>
+    <defName>LasC</defName>
+    <label>Статичиский лазер(шок)</label>
+    <labelShort>RI</labelShort>
+    <description>Энерго ячейка.</description>
+  </CombatExtended.AmmoCategoryDef>
+  
+   <CombatExtended.AmmoCategoryDef>
+    <defName>HES</defName>
+    <label>Осколочная мина(HE2)</label>
+    <labelShort>Осколочная(HE2)</labelShort>
+    <description>Осколочная миномётная мина 105мм.</description>
+  </CombatExtended.AmmoCategoryDef>
+  
+   <CombatExtended.AmmoCategoryDef>
+    <defName>INC</defName>
+    <label>Зажигательная мина(I2)</label>
+    <labelShort>Зажигательная(I2)</labelShort>
+    <description>Зажигательная миномётная мина 105мм.</description>
+  </CombatExtended.AmmoCategoryDef>
+  
+  <CombatExtended.AmmoCategoryDef>
+    <defName>EMPC</defName>
+    <label>EMP мина(E2)</label>
+    <labelShort>ЭМИ(E2)</labelShort>
+    <description>EMP миномётная мина 105мм.</description>
+  </CombatExtended.AmmoCategoryDef>
+  
+   <CombatExtended.AmmoCategoryDef>
+    <defName>FF</defName>
+    <label>Пенная мина(FF2)</label>
+    <labelShort>Противопожарная(FF2)</labelShort>
+    <description>Пенная миномётная мина 105мм.</description>
+  </CombatExtended.AmmoCategoryDef>
+  
+    <CombatExtended.AmmoCategoryDef>
+    <defName>SS</defName>
+    <label>Дымовая мина(S2)</label>
+    <labelShort>Дімовая(S2)</labelShort>
+    <description>Дымовая миномётная мина 105мм.</description>
+  </CombatExtended.AmmoCategoryDef>
+  
+    <CombatExtended.AmmoCategoryDef>
+    <defName>AG</defName>
+    <label>Антиматериальная кластерная мина(AG)</label>
+    <labelShort>Антиматериальная(AG)</labelShort>
+    <description>Антиматериальная кластерная мина 105мм.</description>
+  </CombatExtended.AmmoCategoryDef>
+  
+</Defs>

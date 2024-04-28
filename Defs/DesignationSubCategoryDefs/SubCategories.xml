@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Structure -->
+
+	
+	<ArchitectSense.DesignationSubCategoryDef>
+		<defName>Servo</defName>
+		<label>Альтернативная оборона</label>
+		<description>Оборонные сервиторы.</description>
+		<defNames>
+			<li>Turret_MiniServo</li>
+		    <li>Turret_ShutGunServo</li>
+            <li>Turret_ShutGunFlaim</li>			
+			<li>Turret_HeviServo</li>
+			<li>Turret_SnaipServo</li>
+		    <li>Turret_Laser_Servo</li>
+			<li>Turret_plasma_Servo</li>
+			<li>Turret_Mortal_Servo</li>
+			<li>Turret_art_Servo</li>
+		</defNames>
+		<designationCategory>Security</designationCategory>
+		<debug>false</debug>
+	</ArchitectSense.DesignationSubCategoryDef>
+
+	
+
+</Defs>
+
+
+

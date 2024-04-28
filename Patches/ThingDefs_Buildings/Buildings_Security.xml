@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName = "Artillery_Mortar"]/comps</xpath>
+		<value>
+			<comps>
+			
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aiAimMode>AimedShot</aiAimMode>
+			</li>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>1</magazineSize>
+				<reloadTime>7.2</reloadTime>
+				<!-- <spawnUnloaded>true</spawnUnloaded> -->
+				<ammoSet>AmmoSet_MultiAmmoMortal</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_Charges">
+				<chargeSpeeds>
+					<li>30</li>
+					<li>50</li>
+					<li>70</li>
+					<li>90</li>
+				</chargeSpeeds>
+			</li>
+			</comps>
+		</value>
+	</Operation>
+	
+	</Patch>

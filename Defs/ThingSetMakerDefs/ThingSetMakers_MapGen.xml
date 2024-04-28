@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+ <!--
+
+  <ThingSetMakerDef>
+    <defName>MapGen_AncientComplexRoomLoot_Better</defName>
+    <root Class="ThingSetMaker_RandomOption">
+      <options>
+
+        <li>
+          <weight>0.35</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>ShieldGeneratorServo</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+
+      
+        <li>
+          <weight>0.5</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Apparel_PsychicInsanityLance</li>
+                  <li>Apparel_PsychicShockLance</li>
+                  <li>ArchotechArm</li>
+                  <li>ArchotechEye</li>
+                  <li>ArchotechLeg</li>
+                  <li>Gun_DoomsdayRocket</li>
+                  <li>Gun_TripleRocket</li>
+                  <li>MechSerumHealer</li>
+                  <li>MechSerumResurrector</li>
+                  <li>OrbitalTargeterBombardment</li>
+                  <li>OrbitalTargeterPowerBeam</li>
+                  <li>PsychicAnimalPulser</li>
+                  <li>PsychicEmanator</li>
+                  <li>PsychicSoothePulser</li>
+                  <li>ReinforcedBarrel</li>
+                  <li>Shell_AntigrainWarhead</li>
+                  <li>TechprofSubpersonaCore</li>
+                  <li>TornadoGenerator</li>
+                  <li>VanometricPowerCell</li>
+                  <li MayRequire="Ludeon.RimWorld.Biotech">ArchiteCapsule</li>
+                  <li MayRequire="Ludeon.RimWorld.Biotech">DeathrestCapacitySerum</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~6</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+      </options>
+    </root>
+  </ThingSetMakerDef>
+-->
+  
+</Defs>

@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <ThingDef Name="BaseTurretGun" ParentName="BaseGun" Abstract="True">
+    <statBases>
+      <Mass>10</Mass>
+    </statBases>
+    <relicChance>0</relicChance>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <weaponTags>
+      <li>Gun</li>
+      <li>TurretGun</li>
+    </weaponTags>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>True</destroyOnDrop>
+    <generateAllowChance>0</generateAllowChance>
+    <smeltable>false</smeltable>
+    <modExtensions>
+      <li Class="CombatExtended.ThingDefExtensionCE">
+        <MenuHidden>True</MenuHidden>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef Name="BaseAutoTurretGun" ParentName="BaseTurretGun" Abstract="True">
+    <comps>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aiUseBurstMode>FALSE</aiUseBurstMode>
+        <aiAimMode>AimedShot</aiAimMode>
+        <noSnapshot>true</noSnapshot>
+        <noSingleShot>true</noSingleShot>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ================== Blaster Turret ================== -->
+
+	
+	<ThingDef ParentName="BaseAutoTurretGun">
+		<defName>Gun_Servitor</defName>
+		<label>Сервитор с лёгкими пулемётами</label>
+		<graphicData>
+			<texPath>Things/Building/Turrets/servitor_Top</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<!-- <menuHidden>True</menuHidden> -->
+		<description>Сервиторы — машины-полурабы из живой плоти и металла, существа без индивидуального разума, которые повинуются запрограммированным командам без лишних вопросов.</description>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<tradeability>None</tradeability>
+		<statBases>
+			 <MarketValue>2500</MarketValue>
+            <SightsEfficiency>1</SightsEfficiency>
+            <ShotSpread>0.1</ShotSpread>
+            <SwayFactor>0.5</SwayFactor>
+            <RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
+            <Bulk>19</Bulk>
+            <Mass>70.5</Mass>
+		</statBases>
+		<verbs>
+			  <li Class="CombatExtended.VerbPropertiesCE">
+                <recoilAmount>1.35</recoilAmount>
+                <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <defaultProjectile>Bullet_556x45mmNATO_FMJ</defaultProjectile>
+                <warmupTime>1.7</warmupTime>
+                <range>45</range>
+				<targetParams>
+                    <canTargetLocations>true</canTargetLocations>
+                </targetParams>
+                <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+                <burstShotCount>10</burstShotCount>
+                <soundCast>HeavyMG</soundCast>
+                <soundCastTail>GunTail_Medium</soundCastTail>
+                <muzzleFlashScale>9</muzzleFlashScale>
+            </li>
+		</verbs>
+		<comps>
+			  <li Class="CombatExtended.CompProperties_FireModes">
+                <aiUseBurstMode>FALSE</aiUseBurstMode>
+                <aiAimMode>AimedShot</aiAimMode>
+                <aimedBurstShotCount>5</aimedBurstShotCount>
+            </li>
+            <li Class="CombatExtended.CompProperties_AmmoUser">
+                <magazineSize>400</magazineSize>
+                <reloadTime>10.5</reloadTime>
+                <ammoSet>AmmoSet_MultiAmmo</ammoSet>
+            </li>
+		</comps>
+	</ThingDef>
+
+
+<ThingDef ParentName="BaseAutoTurretGun">
+		<defName>Gun_Servitor_plasma</defName>
+		<label>Сервитор с плазменной установкой</label>
+		<graphicData>
+			<texPath>Things/Building/Turrets/servitormort1</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<!-- <menuHidden>True</menuHidden> -->
+		<description>-------------</description>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<tradeability>None</tradeability>
+		<statBases>
+			 <MarketValue>2500</MarketValue>
+            <SightsEfficiency>1</SightsEfficiency>
+            <ShotSpread>0.1</ShotSpread>
+            <SwayFactor>0.5</SwayFactor>
+            <RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
+            <Bulk>19</Bulk>
+            <Mass>270.5</Mass>
+		</statBases>
+		<verbs>
+			 <li Class="CombatExtended.VerbPropertiesCE">
+				<verbClass>Verb_ShootBeam</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <warmupTime>1.0</warmupTime>
+        <range>30.9</range>
+        <minRange>3.9</minRange>
+        <beamFullWidthRange>6.9</beamFullWidthRange>
+        <burstShotCount>5</burstShotCount>
+        <beamWidth>6</beamWidth>
+        <ticksBetweenBurstShots>22</ticksBetweenBurstShots>
+        <beamDamageDef>Beam</beamDamageDef>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <soundCastBeam>BeamGraser_Shooting</soundCastBeam>
+        <beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
+        <beamFleckChancePerTick>0.32</beamFleckChancePerTick>
+        <beamMaxDeviation>1.5</beamMaxDeviation>
+        <beamCurvature>0.6</beamCurvature>
+        <beamMoteDef>Mote_GraserBeamBase</beamMoteDef>
+        <beamEndEffecterDef>GraserBeam_End</beamEndEffecterDef>
+        <beamChanceToStartFire>0.85</beamChanceToStartFire>
+        <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
+        <beamFireSizeRange>0.3~0.85</beamFireSizeRange>
+        <beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
+        <beamStartOffset>0.8</beamStartOffset>
+		<consumeFuelPerShot>0.05</consumeFuelPerShot>
+		 <defaultProjectile>Bullet_PlasmaLaser</defaultProjectile>
+        <beamLineFleckChanceCurve>
+          <points>
+            <li>(0, 0)</li>
+            <li>(0.65, 0.4)</li>
+            <li>(1, 0.75)</li>
+          </points>
+        </beamLineFleckChanceCurve>
+			</li>
+		</verbs>
+		
+	</ThingDef>
+<ThingDef Class="CombatExtended.AmmoDef" ParentName="SK_BaseBullet">
+		<defName>Bullet_PlasmaLaser</defName>
+		<label>Вспышка</label>
+		<graphicData>
+			<texPath>Things/Weapons/PlasmaShot</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>SunFlame</damageDef>
+			<speed>40</speed>
+			<dropsCasings>false</dropsCasings>
+			<damageAmountBase>15</damageAmountBase>
+			<armorPenetrationSharp>5.5</armorPenetrationSharp>
+			<armorPenetrationBlunt>14</armorPenetrationBlunt>
+		</projectile>
+	</ThingDef>
+
+	
+	<ThingDef ParentName="BaseAutoTurretGun">
+		<defName>Gun_Servitor_havi</defName>
+		<label>Сервитор с 50мм пулемётом</label>
+		<graphicData>
+			<texPath>Things/Building/Turrets/servitorhavi_Top</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<!-- <menuHidden>True</menuHidden> -->
+		<description>-------------</description>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<tradeability>None</tradeability>
+		<statBases>
+			 <MarketValue>4500</MarketValue>
+            <SightsEfficiency>1</SightsEfficiency>
+            <ShotSpread>0.05</ShotSpread>
+            <SwayFactor>0.5</SwayFactor>
+            <RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
+            <Bulk>19</Bulk>
+            <Mass>100.5</Mass>
+		</statBases>
+		<verbs>
+			 	<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilPattern>Mounted</recoilPattern>
+				<recoilAmount>0.95</recoilAmount>
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<targetParams>
+                    <canTargetLocations>true</canTargetLocations>
+                </targetParams>
+				<defaultProjectile>Bullet_50BMG_FMJ</defaultProjectile>
+				<warmupTime>1.20</warmupTime>
+				<range>70</range>
+				<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+				<burstShotCount>10</burstShotCount>
+				<!--<forcedMissRadius>1.9</forcedMissRadius>-->
+				<soundCast>HeavyMG</soundCast>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>350</magazineSize>
+				<reloadTime>7.50</reloadTime>
+				<!-- <spawnUnloaded>true</spawnUnloaded> -->
+				<ammoSet>AmmoSet_50BMG</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aimedBurstShotCount>5</aimedBurstShotCount>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseAutoTurretGun">
+		<defName>Gun_Servitor_shutgun</defName>
+		<label>Сервитор с 12мм дробовиком</label>
+		<graphicData>
+			<texPath>Things/Building/Turrets/servitormort4</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<!-- <menuHidden>True</menuHidden> -->
+		<description>Спаренная башня с двумя дробовиками.</description>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<tradeability>None</tradeability>
+		<statBases>
+			 <MarketValue>4500</MarketValue>
+           <SightsEfficiency>1.45</SightsEfficiency>
+			<ShotSpread>0.08</ShotSpread>
+			<SwayFactor>1.80</SwayFactor>
+			<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+            <Bulk>19</Bulk>
+            <Mass>100.5</Mass>
+		</statBases>
+		<verbs>
+			 	<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>0.41</recoilAmount>
+				<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+				<burstShotCount>2</burstShotCount>
+				  <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <defaultProjectile>Bullet_12Gauge_Buck</defaultProjectile>
+                <warmupTime>0.6</warmupTime>
+                <range>16</range>
+                <soundCast>MFire</soundCast>
+                <soundCastTail>GunTail_Heavy</soundCastTail>
+                <muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+					<magazineSize>160</magazineSize>
+				<reloadTime>6.00</reloadTime>
+				<!-- <spawnUnloaded>false</spawnUnloaded> -->
+				<ammoSet>AmmoSet_12Gauge</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_FireModes">
+					<aimedBurstShotCount>2</aimedBurstShotCount>
+				<aiUseBurstMode>FALSE</aiUseBurstMode>
+				<aiAimMode>Snapshot</aiAimMode>
+				<noSnapshot>true</noSnapshot>
+				<noSingleShot>false</noSingleShot>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	
+	<ThingDef ParentName="BaseAutoTurretGun">
+		<defName>Gun_Servitor_Laser</defName>
+		<label>Сервитор с Гатлинг-лазером</label>
+		<graphicData>
+			<texPath>Things/Building/Turrets/servitormort5</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<!-- <menuHidden>True</menuHidden> -->
+		<description>Спаренная башня с Гатлинг-лазерами.Для охлаждения блок-стволов требуется хладокамень.</description>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<tradeability>None</tradeability>
+		<statBases>
+			 <MarketValue>4500</MarketValue>
+           <SightsEfficiency>1.45</SightsEfficiency>
+			<ShotSpread>0.3</ShotSpread>
+			<SwayFactor>0.80</SwayFactor>
+			<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+            <Bulk>19</Bulk>
+            <Mass>100.5</Mass>
+		</statBases>
+		<verbs>
+			 	<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>0.21</recoilAmount>
+				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+				<burstShotCount>20</burstShotCount>
+				  <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <defaultProjectile>Bullet_ChargedServoLaser</defaultProjectile>
+                <warmupTime>0.3</warmupTime>
+                <range>40</range>
+				<minRange>3</minRange>
+                <soundCast>LaserBeam</soundCast>
+                <soundCastTail>GunTail_Medium</soundCastTail>
+                <muzzleFlashScale>9</muzzleFlashScale>
+				<consumeFuelPerShot>0.01</consumeFuelPerShot>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+					<magazineSize>300</magazineSize>
+				<reloadTime>6.00</reloadTime>
+				<!-- <spawnUnloaded>false</spawnUnloaded> -->
+				<ammoSet>AmmoSet_MultiAmmoLaser</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_FireModes">
+					<aimedBurstShotCount>20</aimedBurstShotCount>
+				<aiUseBurstMode>FALSE</aiUseBurstMode>
+				<aiAimMode>SuppressFire</aiAimMode>
+				<noSnapshot>false</noSnapshot>
+				<noSingleShot>false</noSingleShot>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	
+
+	<ThingDef ParentName="BaseAutoTurretGun">
+		<defName>Gun_Servitor_flaim</defName>
+		<label>Сервитор с огнемётом</label>
+		<graphicData>
+			<texPath>Things/Building/Turrets/servitormort3</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<!-- <menuHidden>True</menuHidden> -->
+		<description>Огнемет предназначен для выведения их строя живой силы противника, расположенной как на открытой местности, легкобронированной и автомобильной техники.</description>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<tradeability>None</tradeability>
+		<statBases>
+			<MarketValue>4400</MarketValue>
+			<SightsEfficiency>1.65</SightsEfficiency>
+			<ShotSpread>0.35</ShotSpread>
+			<SwayFactor>1.30</SwayFactor>
+			<RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
+            <Bulk>19</Bulk>
+            <Mass>100.5</Mass>
+		</statBases>
+		<verbs>
+			 		<li Class="CombatExtended.VerbPropertiesCE">
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<recoilAmount>0.95</recoilAmount>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_Flamethrower_Prometheum</defaultProjectile>
+				<warmupTime>0.12</warmupTime>
+				<range>25</range>
+				<minRange>8</minRange>
+				<ai_AvoidFriendlyFireRadius>4</ai_AvoidFriendlyFireRadius>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<soundCast>HissFlamethrower</soundCast>
+				<muzzleFlashScale>0</muzzleFlashScale>
+				<ticksBetweenBurstShots>15</ticksBetweenBurstShots>
+				<burstShotCount>2</burstShotCount>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+					<magazineSize>220</magazineSize>
+				<reloadTime>5</reloadTime>
+				<ammoSet>AmmoSet_Flamethrower</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aiUseBurstMode>true</aiUseBurstMode>
+				<aimedBurstShotCount>8</aimedBurstShotCount>
+				<aiAimMode>SuppressFire</aiAimMode>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	
+	<ThingDef ParentName="BaseAutoTurretGun">
+		<defName>Gun_Servitor_artillery</defName>
+		<label>Сервитор наводчик</label>
+		<graphicData>
+			<texPath>Things/Building/Turrets/servitormort</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+    <soundInteract>Artillery_ShellLoaded</soundInteract>
+    <statBases>
+      <SightsEfficiency>2.3</SightsEfficiency>
+      <ShotSpread>0.01</ShotSpread>
+      <SwayFactor>1.41</SwayFactor>
+      <RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+      <Mass>500</Mass>
+    </statBases>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <recoilAmount>2.74</recoilAmount>
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_90mmCannonShell_HEAT</defaultProjectile>
+        <warmupTime>2.5</warmupTime>
+        <minRange>8</minRange>
+        <range>92</range>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>120mm</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+		  <ticksBetweenBurstShots>30</ticksBetweenBurstShots>
+        <muzzleFlashScale>20</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <recoilPattern>Mounted</recoilPattern>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>15</magazineSize>
+        <reloadTime>9.8</reloadTime>
+        <ammoSet>AmmoSet_90mmCannonShell</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+               <aimedBurstShotCount>1</aimedBurstShotCount>
+				<aiUseBurstMode>FALSE</aiUseBurstMode>
+				<aiAimMode>Snapshot</aiAimMode>
+				<noSnapshot>true</noSnapshot>
+				<noSingleShot>false</noSingleShot>
+      </li>
+    </comps>
+	<modExtensions>
+		  <li Class="CombatExtended.GunDrawExtension">
+			<CasingOffset>0,-1</CasingOffset>
+			<CasingAngleOffset>90</CasingAngleOffset>
+		  </li>
+		</modExtensions>
+  </ThingDef>
+  
+  
+  
+  <ThingDef ParentName="BaseAutoTurretGun">
+		<defName>Artillery_Mortar_servitor</defName>
+		<label>81mm автоматичиский миномёт</label>
+		<description>Сераитор миномёт , улучшенная балистика благодаря вычисленииям в компе.</description>
+		<graphicData>
+			<texPath>Things/Building/Turrets/servitormort2</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>2500</MarketValue>
+			<SightsEfficiency>0.9</SightsEfficiency>
+			<ShotSpread>0.012</ShotSpread>
+			<SwayFactor>0.05</SwayFactor>
+			<RangedWeapon_Cooldown>10</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>TurretGun</li>
+		</weaponTags>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<verbClass>CombatExtended.Verb_ShootMortarCE</verbClass>
+				<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+				<recoilPattern>Mounted</recoilPattern>
+				<circularError>1</circularError>
+				 <recoilAmount>1.23</recoilAmount>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_81mmMortarShell_HE</defaultProjectile>
+				<warmupTime>5.00</warmupTime>
+				<minRange>15</minRange>
+				<range>480</range>
+				<burstShotCount>2</burstShotCount>
+				<ticksBetweenBurstShots>50</ticksBetweenBurstShots>
+				<muzzleFlashScale>12</muzzleFlashScale>
+				<soundCast>Mortar_LaunchA</soundCast>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aimedBurstShotCount>2</aimedBurstShotCount>
+			</li>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>15</magazineSize>
+				<reloadTime>7.2</reloadTime>
+				<!-- <spawnUnloaded>true</spawnUnloaded> -->
+				<ammoSet>AmmoSet_MultiAmmoMortal</ammoSet>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseAutoTurretGun">
+		<defName>Gun_Mini303A</defName>
+		<label>Мини турель.303</label>
+		<graphicData>
+			<texPath>Things/Building/Security/TurretImprovised_Top</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<!-- <menuHidden>True</menuHidden> -->
+		<description>Миниатюрная турель под 303 патрон</description>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<tradeability>None</tradeability>
+		<statBases>
+			<SightsEfficiency>1.45</SightsEfficiency>
+			<ShotSpread>0.08</ShotSpread>
+			<SwayFactor>1.80</SwayFactor>
+			<RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+		</statBases>
+		<verbs>
+			
+       <li Class="CombatExtended.VerbPropertiesCE">
+                <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <defaultProjectile>Bullet_303British_FMJ</defaultProjectile>
+                <warmupTime>1</warmupTime>
+                <range>50</range>
+                <soundCast>Shot_BoltActionRifle</soundCast>
+                <soundCastTail>GunTail_Heavy</soundCastTail>
+                <muzzleFlashScale>9</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+            </li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>100</magazineSize>
+				<reloadTime>6.00</reloadTime>
+				<!-- <spawnUnloaded>false</spawnUnloaded> -->
+				<ammoSet>AmmoSet_303British</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aimedBurstShotCount>1</aimedBurstShotCount>
+				<aiUseBurstMode>FALSE</aiUseBurstMode>
+				<aiAimMode>Snapshot</aiAimMode>
+				<noSnapshot>true</noSnapshot>
+				<noSingleShot>true</noSingleShot>
+			</li>
+		</comps>
+	</ThingDef>
+
+	
+	<ThingDef ParentName="BaseAutoTurretGun">
+		<defName>Gun_ServitorSniper</defName>
+		<label>Сервитор снайпер</label>
+		<description>Сервитор оборудованный высокоточной винтовкой.</description>
+		<graphicData>
+			<texPath>Things/Building/Turrets/servitormortS</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_ChargeRifle</soundInteract>
+		<techLevel>Spacer</techLevel>
+		<statBases>
+			<MarketValue>7400</MarketValue>
+			<SightsEfficiency>2.65</SightsEfficiency>
+			<ShotSpread>0</ShotSpread>
+			<SwayFactor>0</SwayFactor>
+			<RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
+		</statBases>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>0.45</recoilAmount>
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_30x173mm_HE</defaultProjectile>
+				 <targetParams>
+                  <canTargetLocations>true</canTargetLocations>
+                 </targetParams>
+				<burstShotCount>1</burstShotCount>
+				<warmupTime>8.60</warmupTime>
+				<minRange>6</minRange>
+				<range>900</range>
+				<soundCast>50Cal_Browning</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>12</muzzleFlashScale>
+				<recoilPattern>Mounted</recoilPattern>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>90</magazineSize>
+				<reloadTime>14.00</reloadTime>
+				<!-- <spawnUnloaded>true</spawnUnloaded> -->
+				<ammoSet>AmmoSet_30x173mm</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aimedBurstShotCount>1</aimedBurstShotCount>
+				<aiUseBurstMode>FALSE</aiUseBurstMode>
+				<aiAimMode>Snapshot</aiAimMode>
+				<noSnapshot>true</noSnapshot>
+				<noSingleShot>false</noSingleShot>
+			</li>
+		</comps>
+		<modExtensions>
+		  <li Class="CombatExtended.GunDrawExtension">
+			<CasingOffset>0,-1</CasingOffset>
+			<CasingAngleOffset>90</CasingAngleOffset>
+		  </li>
+		</modExtensions>
+	</ThingDef>
+	
+</Defs>

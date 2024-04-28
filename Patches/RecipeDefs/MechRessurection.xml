@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!-- ========== Light ========== -->
+
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RecipeDef[defName="ResurrectLightMech"]/fixedIngredientFilter/thingDefs</xpath>
+		<value>
+		<li>Corpse_Mech_ServoScul</li>
+        <li>Corpse_Mech_Brain</li>
+        <li>Corpse_Mech_TR</li>
+		<li>Corpse_Mech_Servitor_plasma</li>
+		</value>
+	</Operation>
+
+
+
+</Patch>

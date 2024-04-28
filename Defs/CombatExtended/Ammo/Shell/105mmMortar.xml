@@ -1,0 +1,766 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingCategoryDef>
+		<defName>Ammo105mmMortarShells</defName>
+		<label>105mm mortar shell</label>
+		<parent>AmmoShells</parent>
+		<iconPath>UI/Icons/ThingCategories/CaliberMortar</iconPath>
+	</ThingCategoryDef>
+
+	<!-- ==================== AmmoSet ========================== -->
+
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_105mmMortarShell</defName>
+		<label>105mm миномётные мины</label>
+		<ammoTypes>
+			<Shell_105HighExplosive>Bullet_105mmMortarShell_HE</Shell_105HighExplosive>
+			<Shell_105Incendiary>Bullet_105mmMortarShell_Incendiary</Shell_105Incendiary>
+			<Shell_105EMP>Bullet_105mmMortarShell_EMP</Shell_105EMP>
+			<Shell_105Firefoam>Bullet_105mmMortarShell_FireFoam</Shell_105Firefoam>
+			<Shell_105Smoke>Bullet_105mmMortarShell_Smoke</Shell_105Smoke>      
+			<Shell_105AntigrainWarhead>Bullet_105mmMortarShell_Antigrain</Shell_105AntigrainWarhead>
+		</ammoTypes>
+		<isMortarAmmoSet>true</isMortarAmmoSet>
+	</CombatExtended.AmmoSetDef>
+
+
+	<!-- ==================== Ammo ========================== -->
+
+
+	<ThingDef Class="CombatExtended.AmmoDef" Name="105mmMortarShellBase" ParentName="HeavyAmmoBase" Abstract="True">
+		<description>Снаряд, предназначенный для стрельбы из миномета.</description>
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<MarketValue>75</MarketValue>
+			<Mass>5.27</Mass>
+			<Bulk>8.17</Bulk>
+		</statBases>
+		<thingCategories>
+			<li>Ammo105mmMortarShells</li>
+		</thingCategories>
+		<stackLimit>25</stackLimit>
+		<cookOffFlashScale>30</cookOffFlashScale>
+		<cookOffSound>MortarBomb_Explode</cookOffSound>
+		<cookOffSpeed>0.2</cookOffSpeed>
+		<cookOffTailSound>ShellCookOff_Ambient</cookOffTailSound>
+		<isMortarAmmo>true</isMortarAmmo>
+		<comps>
+			<li Class="CombatExtended.CompProperties_Fragments">
+				<fragments>
+					<Fragment_Large>16</Fragment_Large>
+					<Fragment_Small>30</Fragment_Small>
+				</fragments>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" Name="105mmMortarShellBaseCraftableBase" ParentName="105mmMortarShellBase" Abstract="True">
+		<tradeTags>
+			<li>CE_AutoEnableTrade</li>
+			<li>CE_AutoEnableCrafting_TableMachining</li>
+		</tradeTags>
+	</ThingDef>
+
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="105mmMortarShellBaseCraftableBase">
+		<defName>Shell_105HighExplosive</defName>
+		<label>105mm осколочная мина (HE)</label>
+		<possessionCount>1</possessionCount>
+		<graphicData>
+			<texPath>Things/Ammo/Mortar/HE</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>74.29</MarketValue>
+			<Mass>9.27</Mass>
+			<Bulk>8.17</Bulk>
+		</statBases>
+		<ammoClass>HES</ammoClass>
+		<detonateProjectile>Bullet_105mmMortarShell_HE</detonateProjectile>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="105mmMortarShellBaseCraftableBase">
+		<defName>Shell_105Incendiary</defName>
+		<label>105mm зажигательная мина</label>
+		<possessionCount>1</possessionCount>
+		<graphicData>
+			<texPath>Things/Ammo/Mortar/Incendiary</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>68.34</MarketValue>
+			<Mass>9.1</Mass>
+			<Bulk>10.01</Bulk>
+		</statBases>
+		<ammoClass>INC</ammoClass>
+		<generateAllowChance>0.5</generateAllowChance>
+		<detonateProjectile>Bullet_105mmMortarShell_Incendiary</detonateProjectile>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="105mmMortarShellBaseCraftableBase">
+		<defName>Shell_105EMP</defName>
+		<label>105mm ЭМИ мина</label>
+		<possessionCount>1</possessionCount>
+		<graphicData>
+			<texPath>Things/Ammo/Mortar/EMP</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<ammoClass>EMPC</ammoClass>
+		<generateAllowChance>0</generateAllowChance>
+		<detonateProjectile>Bullet_105mmMortarShell_EMP</detonateProjectile>
+		<statBases>
+			<MarketValue>112.42</MarketValue>
+			<Mass>9.27</Mass>
+			<Bulk>8.17</Bulk>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="105mmMortarShellBaseCraftableBase">
+		<defName>Shell_105Firefoam</defName>
+		<label>105mm пенная мина</label>
+		<description>Герметичная оболочка, наполненная огнетушащей пеной. Можно обстреливать из минометов или устанавливать как ловушку. Взрывается при повреждении</description>
+		<graphicData>
+			<texPath>Things/Ammo/Mortar/EMP</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<ammoClass>FF</ammoClass>
+		<generateAllowChance>0</generateAllowChance>
+		<detonateProjectile>Bullet_105mmMortarShell_FireFoam</detonateProjectile>
+		<statBases>
+			<MarketValue>67.03</MarketValue>
+			<Mass>9.1</Mass>
+			<Bulk>13.34</Bulk>
+		</statBases>
+		<thingSetMakerTags Inherit="false">
+		</thingSetMakerTags>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="105mmMortarShellBaseCraftableBase">
+		<defName>Shell_105Smoke</defName>
+		<label>105mm Дымовая мина</label>
+		<description>Снаряд, который при детонации создает облако дыма, скрывающее входящие выстрелы и препятствующее захвату турелей. Можно обстреливать из минометов или устанавливать как ловушку. Взрывается при повреждении.</description>
+		<possessionCount>2</possessionCount>
+		<graphicData>
+			<texPath>Things/Ammo/Mortar/Smoke</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<ammoClass>SS</ammoClass>
+		<generateAllowChance>0</generateAllowChance>
+		<detonateProjectile>Bullet_105mmMortarShell_Smoke</detonateProjectile>
+		<statBases>
+			<MarketValue>57.03</MarketValue>
+			<Mass>9.1</Mass>
+			<Bulk>13.34</Bulk>
+		</statBases>
+		<thingSetMakerTags Inherit="false">
+		</thingSetMakerTags>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="105mmMortarShellBase">
+		<defName>Shell_105AntigrainWarhead</defName>
+		<label>105mm Антиматериальная мина</label>
+		<graphicData>
+			<texPath>Things/Ammo/Mortar/Antigrain</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>800</MarketValue>
+			<Mass>9.5</Mass>
+			<Bulk>6</Bulk>
+		</statBases>
+		<techLevel>Spacer</techLevel>
+		<thingSetMakerTags>
+			<li>RewardStandardHighFreq</li>
+			<li>RewardSpecial</li>
+		</thingSetMakerTags>
+		<tradeTags>
+			<li>CE_AutoEnableTrade_Sellable</li>
+		</tradeTags>
+		<ammoClass>AG</ammoClass>
+		<generateAllowChance>0</generateAllowChance>
+		<detonateProjectile>Bullet_105mmMortarShell_Antigrain</detonateProjectile>
+	</ThingDef>
+
+	<!-- ================== Projectiles ================== -->
+
+	<ThingDef  Name="Base105mmMortarShell" ParentName="BaseExplosiveBullet" Abstract="true">
+		<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+		<graphicData>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>105</speed>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+			<soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+			<soundAmbient>MortarRound_Ambient</soundAmbient>
+			<flyOverhead>true</flyOverhead>
+			<dropsCasings>false</dropsCasings>
+			<gravityFactor>5</gravityFactor>
+			<shellingProps>
+				<iconPath>Things/WorldObjects/Munitions/Mortar</iconPath>
+				<tilesPerTick>0.06</tilesPerTick>
+				<range>10</range>
+			</shellingProps>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base105mmMortarShell">
+		<defName>Bullet_105mmMortarShell_HE</defName>
+		<label>105mm Осколочная мина (HE)</label>
+		<graphicData>
+			<texPath>Things/Projectile/Mortar/HE</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>190</damageAmountBase>
+			<explosionRadius>4.5</explosionRadius>
+			<flyOverhead>true</flyOverhead>
+			<soundExplode>MortarBomb_Explode</soundExplode>
+			<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+			<ai_IsIncendiary>true</ai_IsIncendiary>
+		</projectile>
+		<comps>
+			<li Class="CombatExtended.CompProperties_Fragments">
+				<fragments>
+					<Shell_HighExplosive>4</Shell_HighExplosive>
+					<Fragment_Small>55</Fragment_Small>
+				</fragments>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="Base105mmMortarShell">
+		<defName>Bullet_105mmMortarShell_Incendiary</defName>
+		<label>105mm Зажигательная мина</label>
+		<graphicData>
+			<texPath>Things/Projectile/Mortar/Incendiary</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Flame</damageDef>
+			<damageAmountBase>120</damageAmountBase>
+			<explosionRadius>4</explosionRadius>
+			<flyOverhead>true</flyOverhead>
+			<soundExplode>MortarIncendiary_Explode</soundExplode>
+			<ai_IsIncendiary>true</ai_IsIncendiary>
+		</projectile>
+		<comps>
+			<li Class="CombatExtended.CompProperties_ExplosiveCE">
+				<damageAmountBase>0</damageAmountBase>
+				<explosiveDamageType>PrometheumFlame</explosiveDamageType>
+				<explosiveRadius>5.5</explosiveRadius>				
+				<preExplosionSpawnThingDef>Tearsofthesun</preExplosionSpawnThingDef>
+				<preExplosionSpawnChance>1</preExplosionSpawnChance>
+			</li>
+			<li Class="CombatExtended.CompProperties_Fragments">
+				<fragments>
+				<Shell_Incendiary>4</Shell_Incendiary>
+					<Fragment_Small>10</Fragment_Small>
+				</fragments>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef  ParentName="Base105mmMortarShell">
+		<defName>Bullet_105mmMortarShell_EMP</defName>
+		<label>105mm ЭМИ мина</label>
+		<graphicData>
+			<texPath>Things/Projectile/Mortar/EMP</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>90</damageAmountBase>
+			<explosionRadius>1</explosionRadius>
+			<flyOverhead>true</flyOverhead>
+			<soundExplode>Explosion_EMP</soundExplode>
+		</projectile>
+		<comps>
+			<li Class="CombatExtended.CompProperties_ExplosiveCE">
+				<explosiveRadius>8.5</explosiveRadius>
+				<explosiveDamageType>EMP</explosiveDamageType>
+				<damageAmountBase>156</damageAmountBase>
+			</li>
+			<li Class="CombatExtended.CompProperties_Fragments">
+				<fragments>
+				<Shell_EMP>4</Shell_EMP>
+					<Fragment_Small>10</Fragment_Small>
+				</fragments>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="Base105mmMortarShell">
+		<defName>Bullet_105mmMortarShell_FireFoam</defName>
+		<label>105mm мина с пожарной пеной</label>
+		<graphicData>
+			<texPath>Things/Projectile/Mortar/EMP</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>90</damageAmountBase>
+			<explosionRadius>1</explosionRadius>
+			<flyOverhead>true</flyOverhead>
+			<soundExplode>Explosion_EMP</soundExplode>
+			<explosionEffect>ExtinguisherExplosion</explosionEffect>
+		</projectile>
+		<comps>
+			<li Class="CombatExtended.CompProperties_ExplosiveCE">
+				<damageAmountBase>0</damageAmountBase>
+				<explosiveRadius>7</explosiveRadius>
+				<explosiveDamageType>Extinguish</explosiveDamageType>				
+				<postExplosionSpawnThingDef>Filth_FireFoam</postExplosionSpawnThingDef>
+				<postExplosionSpawnChance>1</postExplosionSpawnChance>
+				<postExplosionSpawnThingCount>3</postExplosionSpawnThingCount>
+				<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+			</li>
+			<li Class="CombatExtended.CompProperties_Fragments">
+				<fragments>
+					<Shell_Firefoam>4</Shell_Firefoam>
+					<Fragment_Small>10</Fragment_Small>
+				</fragments>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="Base105mmMortarShell">
+		<defName>Bullet_105mmMortarShell_Smoke</defName>
+		<label>105mm дымовая мина</label>
+		<graphicData>
+			<texPath>Things/Projectile/Mortar/Smoke</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>80</damageAmountBase>
+			<explosionRadius>1</explosionRadius>
+			<flyOverhead>true</flyOverhead>
+			<soundExplode>Explosion_Smoke</soundExplode>
+			<explosionEffect>ExtinguisherExplosion</explosionEffect>
+		</projectile>
+		<comps>
+			<li Class="CombatExtended.CompProperties_ExplosiveCE">
+				<explosiveRadius>20.0</explosiveRadius>
+				<explosiveDamageType>Smoke</explosiveDamageType>
+				<postExplosionGasType>BlindSmoke</postExplosionGasType>
+				<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+			</li>
+		</comps>
+	</ThingDef>	
+
+	<ThingDef ParentName="Base105mmMortarShell">
+		<defName>Bullet_105mmMortarShell_Antigrain</defName>
+		<label>105mm антиматериальная мина</label>
+		<graphicData>
+			<texPath>Things/Projectile/Mortar/Antigrain</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>900</damageAmountBase>
+			<explosionRadius>15</explosionRadius>
+			<flyOverhead>true</flyOverhead>
+			<explosionChanceToStartFire>0.22</explosionChanceToStartFire>
+			<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+			<explosionEffect>GiantExplosion</explosionEffect>
+			<soundExplode>Explosion_GiantBomb</soundExplode>
+		</projectile>
+		<comps>
+			<li Class="CombatExtended.CompProperties_Fragments">
+				<fragments>
+					<Shell_AntigrainWarhead>4</Shell_AntigrainWarhead>
+					<Fragment_Small>60</Fragment_Small>
+				</fragments>
+			</li>
+		</comps>
+	</ThingDef>
+
+
+	<RecipeDef ParentName="GrenadeRecipeBase">
+		<defName>MakeShell_105HighExplosive</defName>
+		<label>Сделать 105mm осколочный снаряд x1</label>
+		<description>Создать 105mm осколочный миномётный снаряд.</description>
+		<jobString>Создаёт 105mm осколочный снаряд.</jobString>
+		<workAmount>1000</workAmount>
+		<targetCountAdjustment>10</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>SLDBar</li>
+						<li>USLDBar</li>
+					</categories>
+				</filter>
+				<count>15</count>
+			</li>
+			<li>
+				<filter>
+					<categories>
+						<li>HeavyBar</li>
+					</categories>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Powder</li>
+						<li>FSX</li>
+					</thingDefs>
+				</filter>
+				<count>8</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>SLDBar</li>
+				<li>USLDBar</li>
+				<li>HeavyBar</li>
+			</categories>
+			<thingDefs>
+				<li>Powder</li>
+				<li>FSX</li>
+				<li>ComponentIndustrial</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Shell_105HighExplosive>1</Shell_105HighExplosive>
+		</products>
+		<researchPrerequisite>Range_C2</researchPrerequisite>
+	</RecipeDef>
+
+	<RecipeDef ParentName="GrenadeRecipeBase">
+		<defName>MakeShell_105Incendiary</defName>
+		<label>Создать 105mm зажигательный снаряд x1</label>
+		<description>Создать 105mm Зажигательный снаряд.</description>
+		<jobString>Создаёт 105mm зажигательный снаряд.</jobString>
+		<workAmount>1000</workAmount>
+		<targetCountAdjustment>10</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>SLDBar</li>
+						<li>USLDBar</li>
+					</categories>
+				</filter>
+				<count>15</count>
+			</li>
+			<li>
+				<filter>
+					<categories>
+						<li>HeavyBar</li>
+					</categories>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Powder</li>
+						<li>FSX</li>
+					</thingDefs>
+				</filter>
+				<count>6</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Prometheum</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>SLDBar</li>
+				<li>USLDBar</li>
+				<li>HeavyBar</li>
+			</categories>
+			<thingDefs>
+				<li>Powder</li>
+				<li>FSX</li>
+				<li>Prometheum</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Shell_105Incendiary>1</Shell_105Incendiary>
+		</products>
+		<researchPrerequisite>Range_C2</researchPrerequisite>
+	</RecipeDef>
+
+	<RecipeDef ParentName="GrenadeRecipeBase">
+		<defName>MakeShell_105EMP</defName>
+		<label>Создать 105mm ЭМИ снаряд x1</label>
+		<description>Создаёт 105mm EMP миномётный снаряд.</description>
+		<jobString>Создаёт  105mm EMP снаряд</jobString>
+		<workAmount>1000</workAmount>
+		<targetCountAdjustment>10</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>SLDBar</li>
+						<li>USLDBar</li>
+					</categories>
+				</filter>
+				<count>15</count>
+			</li>
+			<li>
+				<filter>
+					<categories>
+						<li>HeavyBar</li>
+					</categories>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Powder</li>
+					</thingDefs>
+				</filter>
+				<count>6</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ElectronicComponents</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>SLDBar</li>
+				<li>USLDBar</li>
+				<li>HeavyBar</li>
+			</categories>
+			<thingDefs>
+				<li>Powder</li>
+				<li>ElectronicComponents</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Shell_105EMP>1</Shell_105EMP>
+		</products>
+		<researchPrerequisite>Range_C2</researchPrerequisite>
+	</RecipeDef>
+	
+	
+	
+	<RecipeDef ParentName="GrenadeRecipeBase">
+		<defName>MakeShell_105Antigrav</defName>
+		<label>Сделать 105mm антиматериальную миномётную мину x1</label>
+		<description>Сделать 105mm антиматериальную миномётную мину.</description>
+		<jobString>Создаёт 105mm антиматериальную миномётную мину.</jobString>
+		<workAmount>1000</workAmount>
+		<targetCountAdjustment>10</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>SLDBar</li>
+						<li>USLDBar</li>
+					</categories>
+				</filter>
+				<count>15</count>
+			</li>
+			<li>
+				<filter>
+					<categories>
+						<li>HeavyBar</li>
+					</categories>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Powder</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Antimatter</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>SLDBar</li>
+				<li>USLDBar</li>
+				<li>HeavyBar</li>
+			</categories>
+			<thingDefs>
+				<li>Powder</li>
+				<li>ElectronicComponents</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Shell_105AntigrainWarhead>1</Shell_105AntigrainWarhead>
+		</products>
+		<researchPrerequisite>Range_C2</researchPrerequisite>
+	</RecipeDef>
+
+
+	<RecipeDef ParentName="GrenadeRecipeBase">
+		<defName>MakeShell_105Firefoam</defName>
+		<label>Создать 105mm снаряд с пеной x1</label>
+		<description>Создать  105mm противопожарный миномётный снаряд.</description>
+		<jobString>Создаёт 105mm противопожарный миномётный снаряд.</jobString>
+		<workAmount>1000</workAmount>
+		<targetCountAdjustment>10</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>SLDBar</li>
+						<li>USLDBar</li>
+					</categories>
+				</filter>
+				<count>15</count>
+			</li>
+			<li>
+				<filter>
+					<categories>
+						<li>HeavyBar</li>
+					</categories>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Surfactant</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Powder</li>
+						<li>FSX</li>
+					</thingDefs>
+				</filter>
+				<count>9</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>SLDBar</li>
+				<li>USLDBar</li>
+				<li>HeavyBar</li>
+			</categories>
+			<thingDefs>
+				<li>Surfactant</li>
+				<li>Powder</li>
+				<li>FSX</li>
+				<li>ComponentIndustrial</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Shell_105Firefoam>1</Shell_105Firefoam>
+		</products>
+		<researchPrerequisite>Range_C2</researchPrerequisite>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="GrenadeRecipeBase">
+		<defName>MakeShell_105Smoke</defName>
+		<label>Сделать 105mm дымный снаряд x1</label>
+		<description>Создать 105mm миномётный дымовой снаряд.</description>
+		<jobString>Создаёт 105mm дымовой снаряд.</jobString>
+		<workAmount>1000</workAmount>
+		<targetCountAdjustment>10</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>SLDBar</li>
+						<li>USLDBar</li>
+					</categories>
+				</filter>
+				<count>15</count>
+			</li>
+			<li>
+				<filter>
+					<categories>
+						<li>HeavyBar</li>
+					</categories>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<categories>
+						<li>Chemical</li>
+					</categories>
+				</filter>
+				<count>4</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Powder</li>
+						<li>FSX</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>SLDBar</li>
+				<li>USLDBar</li>
+				<li>HeavyBar</li>
+				<li>Chemical</li>
+			</categories>
+			<thingDefs>
+				<li>Powder</li>
+				<li>FSX</li>
+				<li>ComponentIndustrial</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Shell_105Smoke>1</Shell_105Smoke>
+		</products>
+		<researchPrerequisite>Range_C2</researchPrerequisite>
+	</RecipeDef>
+
+</Defs>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_MultiAmmo</defName>
+		<label>Сменные стволы:5.56x45mm/7.62x51mm</label>
+		<ammoTypes>
+		<Ammo_556x45mmNATO_FMJ>Bullet_556x45mmNATO_FMJ</Ammo_556x45mmNATO_FMJ>
+		<Ammo_762x51mmNATO_AP>Bullet_762x51mmNATO_AP</Ammo_762x51mmNATO_AP>
+		<Ammo_762x51mmNATO_HP>Bullet_762x51mmNATO_HP</Ammo_762x51mmNATO_HP>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+
+<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_MultiAmmoLaser</defName>
+		<label>Сменные конденсаторы</label>
+		<ammoTypes>
+		<AmmoSet_ChargedServoLaser>Bullet_ChargedServoLaser</AmmoSet_ChargedServoLaser>
+		<AmmoSet_ChargedServoLaser_Stable>Bullet_ChargedServoLaser_Stable</AmmoSet_ChargedServoLaser_Stable>
+		<AmmoSet_ChargedServoLaser_Short>Bullet_ChargedServoLaser_Short</AmmoSet_ChargedServoLaser_Short>
+		<Ammo_ChargedLaser>Bullet_Laserbeam</Ammo_ChargedLaser>
+		<Ammo_ChargedLaser_Stable>Bullet_Laserbeam_Stable</Ammo_ChargedLaser_Stable>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+	
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_MultiAmmoMortal</defName>
+		<label>Сменные стволы:81mm/105mm</label>
+		<ammoTypes>
+	    	<Shell_HighExplosive>Bullet_81mmMortarShell_HE</Shell_HighExplosive>
+			<Shell_Incendiary>Bullet_81mmMortarShell_Incendiary</Shell_Incendiary>
+			<Shell_EMP>Bullet_81mmMortarShell_EMP</Shell_EMP>
+			<Shell_Firefoam>Bullet_81mmMortarShell_Firefoam</Shell_Firefoam>
+			<Shell_Smoke>Bullet_81mmMortarShell_Smoke</Shell_Smoke>
+			<Shell_AntigrainWarhead>Bullet_81mmMortarShell_Antigrain</Shell_AntigrainWarhead>
+			<Shell_Toxic MayRequire="Ludeon.RimWorld.Biotech">Bullet_81mmMortarShell_Tox</Shell_Toxic>
+        	<Shell_105HighExplosive>Bullet_105mmMortarShell_HE</Shell_105HighExplosive>
+			<Shell_105Incendiary>Bullet_105mmMortarShell_Incendiary</Shell_105Incendiary>
+			<Shell_105EMP>Bullet_105mmMortarShell_EMP</Shell_105EMP>
+			<Shell_105Firefoam>Bullet_105mmMortarShell_FireFoam</Shell_105Firefoam>
+			<Shell_105Smoke>Bullet_105mmMortarShell_Smoke</Shell_105Smoke>      
+			<Shell_105AntigrainWarhead>Bullet_105mmMortarShell_Antigrain</Shell_105AntigrainWarhead>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+</Defs>

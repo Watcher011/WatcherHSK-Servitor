@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<ThingDef Name="TurretBaseServo" ParentName="SK_BuildingBase" Abstract="True">
+		<destroyOnDrop>True</destroyOnDrop>
+		<thingClass>CombatExtended.Building_TurretGunCE</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<drawSize>(3,3)</drawSize>
+			<shadowData>
+				<volume>(1, 0.5, 1)</volume>
+				<offset>(0,0,-0.1)</offset>
+			</shadowData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<tradeability>None</tradeability>
+		<techLevel>Industrial</techLevel>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>0.1</Flammability>
+			<WorkToBuild>6000</WorkToBuild>
+			<Beauty>-60</Beauty>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			
+			  <li Class="CompProperties_Power">
+         <compClass>CompPowerPlant</compClass>
+        <basePowerConsumption>1800</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+         </li>
+		</comps>
+		<tickerType>Normal</tickerType>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<fillPercent>0.95</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<ai_combatDangerous>false</ai_combatDangerous>
+		</building>
+		<placeWorkers>
+			<li>PlaceWorker_TurretTop</li>
+		</placeWorkers>
+		<tradeTags>
+			<li>CE_Turret</li>
+		</tradeTags>
+		<weaponClasses>
+			<li>Ranged</li>
+		</weaponClasses>
+		<castEdgeShadows>false</castEdgeShadows>
+		<staticSunShadowHeight>0</staticSunShadowHeight>
+	</ThingDef>
+
+
+	<ThingDef ParentName="TurretBaseServo">
+		<defName>Turret_MiniServo</defName>
+		<label>Оборонный сервитор</label>
+		<graphicData>
+			<texPath>Things/Building/Turrets/ServitorTurret_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(0.27,0.25,0.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>Things/Building/Turrets/servitor_Top</uiIconPath>
+		<statBases>
+			<Flammability>1.0</Flammability>
+			<WorkToBuild>800</WorkToBuild>
+			<Mass>160</Mass>
+			<Bulk>20</Bulk>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<description>Оборонный сервитор с функцией определения свой/чужой. Оборудован 2мя пулемётами.с возможностью смены свола на калибры \nCaliber: 5.56x45mm NATO \ 7.62x51mm NATO</description>
+		<stuffCategories>
+			<li>RuggedMetallic</li>
+		</stuffCategories>
+		<costStuffCount>100</costStuffCount>
+		<costList>
+		  <Weapon_Parts>20</Weapon_Parts>
+			<ServitorPak>1</ServitorPak>
+		</costList>
+
+		<specialDisplayRadius>3</specialDisplayRadius>
+		<designationCategory>Security</designationCategory>
+		<building>
+			<ai_combatDangerous>false</ai_combatDangerous>
+			<turretGunDef>Gun_Servitor</turretGunDef>
+			<turretTopDrawSize>2</turretTopDrawSize>
+		</building>
+		<designationHotKey>Misc1</designationHotKey>
+		<tradeTags>
+			<li>CE_Turret</li>
+		</tradeTags>
+		<minifiedDef>MinifiedTurretGun</minifiedDef>
+		<thingCategories>
+			<li>BuildingsSecurity</li>
+		</thingCategories>
+		 <thingSetMakerTags>
+      <li>RewardStandardCore</li>
+    </thingSetMakerTags>
+		<researchPrerequisites>
+			<li>Servo_B1</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+	</ThingDef>
+	
+	
+	
+	<ThingDef ParentName="TurretBaseServo">
+		<defName>Turret_ShutGunServo</defName>
+		<label>Оборонный сервитор с дробовиком</label>
+		<graphicData>
+			<texPath>Things/Building/Turrets/ServitorTurret_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(0.27,0.25,0.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>Things/Building/Turrets/servitormort4</uiIconPath>
+		<statBases>
+			<Flammability>1.0</Flammability>
+			<WorkToBuild>800</WorkToBuild>
+			<Mass>160</Mass>
+			<Bulk>20</Bulk>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<description>Оборонный сервитор с функцией определения свой/чужой. Оборудован 2мя дробовиками.\nCaliber: 12mm</description>
+		<stuffCategories>
+			<li>RuggedMetallic</li>
+		</stuffCategories>
+		<costStuffCount>100</costStuffCount>
+		<costList>
+		 <Shotgun_Component>2</Shotgun_Component>
+		  <Weapon_Parts>20</Weapon_Parts>
+			<ServitorPak>1</ServitorPak>
+		</costList>
+
+		<specialDisplayRadius>3</specialDisplayRadius>
+		<designationCategory>Security</designationCategory>
+		<building>
+			<ai_combatDangerous>false</ai_combatDangerous>
+			<turretGunDef>Gun_Servitor_shutgun</turretGunDef>
+			<turretTopDrawSize>2</turretTopDrawSize>
+		</building>
+		<designationHotKey>Misc1</designationHotKey>
+		<tradeTags>
+			<li>CE_Turret</li>
+		</tradeTags>
+		<minifiedDef>MinifiedTurretGun</minifiedDef>
+		<thingCategories>
+			<li>BuildingsSecurity</li>
+		</thingCategories>
+		 <thingSetMakerTags>
+      <li>RewardStandardCore</li>
+    </thingSetMakerTags>
+		<researchPrerequisites>
+			<li>Servo_B1</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+	</ThingDef>
+	
+	
+	<ThingDef ParentName="TurretBaseServo">
+		<defName>Turret_ShutGunFlaim</defName>
+		<label>Оборонный сервитор с огнемётом</label>
+		<graphicData>
+			<texPath>Things/Building/Turrets/ServitorTurret_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(0.27,0.25,0.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>Things/Building/Turrets/servitormort3</uiIconPath>
+		<statBases>
+			<Flammability>0</Flammability>
+			<WorkToBuild>800</WorkToBuild>
+			<Mass>160</Mass>
+			<Bulk>20</Bulk>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<description>Оборонный сервитор с функцией определения свой/чужой. Оборудован 2мя огнемётными системами.\nCaliber: Prometheum</description>
+		<stuffCategories>
+			<li>RuggedMetallic</li>
+		</stuffCategories>
+		<costStuffCount>100</costStuffCount>
+		<costList>
+		  <Pipe>20</Pipe>
+		  <Weapon_Parts>20</Weapon_Parts>
+			<ServitorPak>1</ServitorPak>
+		</costList>
+
+		<specialDisplayRadius>4</specialDisplayRadius>
+		<designationCategory>Security</designationCategory>
+		<building>
+			<ai_combatDangerous>false</ai_combatDangerous>
+			<turretGunDef>Gun_Servitor_flaim</turretGunDef>
+			<turretTopDrawSize>2</turretTopDrawSize>
+		</building>
+		<designationHotKey>Misc1</designationHotKey>
+		<tradeTags>
+			<li>CE_Turret</li>
+		</tradeTags>
+		<minifiedDef>MinifiedTurretGun</minifiedDef>
+		<thingCategories>
+			<li>BuildingsSecurity</li>
+		</thingCategories>
+		 <thingSetMakerTags>
+      <li>RewardStandardCore</li>
+    </thingSetMakerTags>
+		<researchPrerequisites>
+			<li>Servo_B1</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+	</ThingDef>
+
+
+	<ThingDef ParentName="TurretBaseServo">
+		<defName>Turret_HeviServo</defName>
+		<label>Оборонный тяж сервитор</label>
+		<graphicData>
+			<texPath>Things/Building/Turrets/ServitorTurret_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(0.27,0.25,0.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>Things/Building/Turrets/servitorhavi_Top</uiIconPath>
+		<statBases>
+			<Flammability>1.0</Flammability>
+			<WorkToBuild>800</WorkToBuild>
+			<Mass>16</Mass>
+			<Bulk>20</Bulk>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<description>Оборонный сервитор с функцией определения свой/чужой. Оборудован 2мя пулемётами.\nCaliber:.50mm</description>
+		<stuffCategories>
+			<li>RuggedMetallic</li>
+		</stuffCategories>
+		<costStuffCount>100</costStuffCount>
+		<costList>
+		 <Heavy_Component>2</Heavy_Component>
+		  <Weapon_Parts>20</Weapon_Parts>
+			<ServitorPak>1</ServitorPak>
+		</costList>
+		<specialDisplayRadius>3</specialDisplayRadius>
+		<designationCategory>Security</designationCategory>
+		<building>
+			<ai_combatDangerous>false</ai_combatDangerous>
+			<turretGunDef>Gun_Servitor_havi</turretGunDef>
+			<turretTopDrawSize>2</turretTopDrawSize>
+		</building>
+		<designationHotKey>Misc1</designationHotKey>
+		<tradeTags>
+			<li>CE_Turret</li>
+		</tradeTags>
+		<minifiedDef>MinifiedTurretGun</minifiedDef>
+		<thingCategories>
+			<li>BuildingsSecurity</li>
+		</thingCategories>
+		 <thingSetMakerTags>
+      <li>RewardStandardCore</li>
+    </thingSetMakerTags>
+		<researchPrerequisites>
+			<li>Servo_C1</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+	</ThingDef>
+	
+	
+	
+	
+	<ThingDef ParentName="TurretBaseServo">
+		<defName>Turret_SnaipServo</defName>
+		<label>Оборонный высокоточный сервитор</label>
+		<graphicData>
+			<texPath>Things/Building/Turrets/ServitorTurret_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(0.27,0.25,0.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>Things/Building/Turrets/servitormortS</uiIconPath>
+		<statBases>
+			<Flammability>1.0</Flammability>
+			<WorkToBuild>800</WorkToBuild>
+			<Mass>16</Mass>
+			<Bulk>20</Bulk>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<description>Оборонный сервитор с функцией определения свой/чужой. Оборудован снайперской винтовкой.\nCaliber:.30mm</description>
+		<stuffCategories>
+			<li>RuggedMetallic</li>
+		</stuffCategories>
+		<costStuffCount>100</costStuffCount>
+		<costList>
+		 <Heavy_Component>1</Heavy_Component>
+		  <Weapon_Parts>20</Weapon_Parts>
+			<ServitorPak>1</ServitorPak>
+		</costList>
+		<specialDisplayRadius>3</specialDisplayRadius>
+		<designationCategory>Security</designationCategory>
+		<building>
+			<ai_combatDangerous>false</ai_combatDangerous>
+			<turretGunDef>Gun_ServitorSniper</turretGunDef>
+			<turretTopDrawSize>4</turretTopDrawSize>
+		</building>
+		<designationHotKey>Misc1</designationHotKey>
+		<tradeTags>
+			<li>CE_Turret</li>
+		</tradeTags>
+		<minifiedDef>MinifiedTurretGun</minifiedDef>
+		<thingCategories>
+			<li>BuildingsSecurity</li>
+		</thingCategories>
+		 <thingSetMakerTags>
+      <li>RewardStandardCore</li>
+    </thingSetMakerTags>
+		<researchPrerequisites>
+			<li>Servo_C1</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+	</ThingDef>
+	
+	
+	
+	
+	<ThingDef ParentName="TurretBaseServo">
+		<defName>Turret_plasma_Servo</defName>
+		<label>Оборонный сервитор с плазмой</label>
+		<graphicData>
+			<texPath>Things/Building/Turrets/ServitorTurret_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(0.27,0.25,0.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>Things/Building/Turrets/servitormort1</uiIconPath>
+		<statBases>
+			<Flammability>1.0</Flammability>
+			<WorkToBuild>800</WorkToBuild>
+			<Mass>16</Mass>
+			<Bulk>20</Bulk>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+				<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(5,5,250,0)</glowColor>
+			</li>
+			
+			  <li Class="CompProperties_Refuelable">
+			<fuelLabel>Заряды плазмы</fuelLabel>
+			<fuelGizmoLabel>Уровень заряда</fuelGizmoLabel>
+			<outOfFuelMessage>Не может стрелять : нужны заряды</outOfFuelMessage>
+			<fuelFilter><thingDefs><li>Ammo_Servitor_Plasma</li></thingDefs></fuelFilter>
+			<fuelCapacity>15</fuelCapacity>       <!-- 140 shoots -->
+			<fuelMultiplier>1</fuelMultiplier> <!-- 140 human meat per full rearm -->
+			<initialFuelPercent>0</initialFuelPercent>
+			<autoRefuelPercent>0.25</autoRefuelPercent>
+			<showFuelGizmo>true</showFuelGizmo>
+			<minimumFueledThreshold>1</minimumFueledThreshold>
+			<factorByDifficulty>false</factorByDifficulty>
+			<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+			<fuelIconPath>Things/Ammo/Plasma/Plasma_c</fuelIconPath>
+		  </li>
+		</comps>
+		<tickerType>Normal</tickerType>
+		<description>Оборонный сервитор с функцией определения свой/чужой. Оборудован плазменной пушкой.</description>
+		<stuffCategories>
+			<li>RuggedMetallic</li>
+		</stuffCategories>
+		<costStuffCount>100</costStuffCount>
+		<costList>
+		  <Plasma_Component>1</Plasma_Component>
+		  <Weapon_Parts>20</Weapon_Parts>
+			<ServitorPak>1</ServitorPak>
+		</costList>
+		<specialDisplayRadius>4</specialDisplayRadius>
+		<designationCategory>Security</designationCategory>
+		<building>
+			<ai_combatDangerous>false</ai_combatDangerous>
+			<turretGunDef>Gun_Servitor_plasma</turretGunDef>
+			<turretTopDrawSize>2</turretTopDrawSize>
+		</building>
+		<designationHotKey>Misc1</designationHotKey>
+		<tradeTags>
+			<li>CE_Turret</li>
+		</tradeTags>
+		<minifiedDef>MinifiedTurretGun</minifiedDef>
+		<thingCategories>
+			<li>BuildingsSecurity</li>
+		</thingCategories>
+		 <thingSetMakerTags>
+      <li>RewardStandardCore</li>
+    </thingSetMakerTags>
+		<researchPrerequisites>
+			<li>Servo_C2</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+	</ThingDef>
+	
+	
+	<ThingDef ParentName="TurretBaseServo">
+		<defName>Turret_Laser_Servo</defName>
+		<label>Оборонный сервитор с Гатлинг - лазером</label>
+		<graphicData>
+			<texPath>Things/Building/Turrets/ServitorTurret_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(0.27,0.25,0.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>Things/Building/Turrets/servitormort5</uiIconPath>
+		<statBases>
+			<Flammability>1.0</Flammability>
+			<WorkToBuild>800</WorkToBuild>
+			<Mass>16</Mass>
+			<Bulk>20</Bulk>
+		</statBases>
+				<comps>
+			<li Class="CompProperties_Forbiddable"/>
+				<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(250,5,5,0)</glowColor>
+			</li>
+			  <li Class="CompProperties_Refuelable">
+			<fuelLabel>Уровень хладогента</fuelLabel>
+			<fuelGizmoLabel>Уровень охлаждения</fuelGizmoLabel>
+			<outOfFuelMessage>Не может стрелять : нужно охлаждение</outOfFuelMessage>
+			<fuelFilter><thingDefs><li>Coldstone</li></thingDefs></fuelFilter>
+			<fuelCapacity>14</fuelCapacity>       <!-- 140 shoots -->
+			<fuelMultiplier>1</fuelMultiplier> <!-- 140 human meat per full rearm -->
+			<initialFuelPercent>0</initialFuelPercent>
+			<autoRefuelPercent>0.25</autoRefuelPercent>
+			<showFuelGizmo>true</showFuelGizmo>
+			<minimumFueledThreshold>1</minimumFueledThreshold>
+			<factorByDifficulty>false</factorByDifficulty>
+			<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+			<fuelIconPath>Things/Item/Resource/Coldstone</fuelIconPath>
+		  </li>
+		</comps>
+		<tickerType>Normal</tickerType>
+		<description>Оборонный сервитор с функцией определения свой/чужой. Оборудован лазерной пушкой.</description>
+		<stuffCategories>
+			<li>RuggedMetallic</li>
+		</stuffCategories>
+		<costStuffCount>100</costStuffCount>
+		<costList>
+		  <Plasma_Component>1</Plasma_Component>
+		  <Weapon_Parts>20</Weapon_Parts>
+			<ServitorPak>1</ServitorPak>
+		</costList>
+		<specialDisplayRadius>4</specialDisplayRadius>
+		<designationCategory>Security</designationCategory>
+		<building>
+			<ai_combatDangerous>false</ai_combatDangerous>
+			<turretGunDef>Gun_Servitor_Laser</turretGunDef>
+			<turretTopDrawSize>2</turretTopDrawSize>
+		</building>
+		<designationHotKey>Misc1</designationHotKey>
+		<tradeTags>
+			<li>CE_Turret</li>
+		</tradeTags>
+		<minifiedDef>MinifiedTurretGun</minifiedDef>
+		<thingCategories>
+			<li>BuildingsSecurity</li>
+		</thingCategories>
+		 <thingSetMakerTags>
+      <li>RewardStandardCore</li>
+    </thingSetMakerTags>
+		<researchPrerequisites>
+			<li>Servo_C2</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+	</ThingDef>
+	
+	
+<ThingDef ParentName="TurretBaseServo">
+		<defName>Turret_art_Servo</defName>
+		<label>Оборонный сервитор с 90мм пушкой</label>
+		<graphicData>
+			<texPath>Things/Building/Turrets/ServitorTurret_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(0.27,0.25,0.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>Things/Building/Turrets/servitormort</uiIconPath>
+		<statBases>
+			<Flammability>1.0</Flammability>
+			<WorkToBuild>800</WorkToBuild>
+			<Mass>16</Mass>
+			<Bulk>20</Bulk>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<description>Оборонный сервитор с функцией определения свой/чужой. Оборудован пушкой.\nCaliber:.90mm</description>
+		<stuffCategories>
+			<li>RuggedMetallic</li>
+		</stuffCategories>
+		<costStuffCount>100</costStuffCount>
+		<costList>
+		<Heavy_Component>1</Heavy_Component>
+            <Plastic>20</Plastic>
+		  <Weapon_Parts>25</Weapon_Parts>
+			<ServitorPak>1</ServitorPak>
+		</costList>
+		<specialDisplayRadius>3</specialDisplayRadius>
+		<designationCategory>Security</designationCategory>
+		<building>
+			<ai_combatDangerous>false</ai_combatDangerous>
+			<turretGunDef>Gun_Servitor_artillery</turretGunDef>
+			<turretTopDrawSize>4</turretTopDrawSize>
+		</building>
+		<designationHotKey>Misc1</designationHotKey>
+		<tradeTags>
+			<li>CE_Turret</li>
+		</tradeTags>
+		<minifiedDef>MinifiedTurretGun</minifiedDef>
+		<thingCategories>
+			<li>BuildingsSecurity</li>
+		</thingCategories>
+		 <thingSetMakerTags>
+      <li>RewardStandardCore</li>
+    </thingSetMakerTags>
+		<researchPrerequisites>
+			<li>Servo_C3</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+	</ThingDef>	
+	
+	
+	
+	
+	<ThingDef ParentName="TurretBaseServo">
+		<defName>Turret_Mortal_Servo</defName>
+		<label>Оборонный сервитор с 81мм миномётом</label>
+		<graphicData>
+			<texPath>Things/Building/Turrets/ServitorTurret_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(0.27,0.25,0.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<techLevel>Spacer</techLevel>
+		<uiIconPath>Things/Building/Turrets/servitormort2</uiIconPath>
+		<statBases>
+		    <MarketValue>9500</MarketValue>
+			<Flammability>1.0</Flammability>
+			<WorkToBuild>800</WorkToBuild>
+			<Mass>16</Mass>
+			<Bulk>20</Bulk>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<description>Оборонный сервитор с функцией определения свой/чужой. Оборудован миномётом.\nCaliber:81mm</description>
+		<stuffCategories>
+			<li>RuggedMetallic</li>
+		</stuffCategories>
+		<costStuffCount>100</costStuffCount>
+		<costList>
+		<Heavy_Component>1</Heavy_Component>
+            <Plastic>20</Plastic>
+		  <Weapon_Parts>30</Weapon_Parts>
+			<ServitorPak>1</ServitorPak>
+		</costList>
+		<specialDisplayRadius>3</specialDisplayRadius>
+		<designationCategory>Security</designationCategory>
+		<building>
+			<ai_combatDangerous>false</ai_combatDangerous>
+			<turretGunDef>Artillery_Mortar_servitor</turretGunDef>
+			<turretTopDrawSize>2</turretTopDrawSize>
+			<buildingTags>
+				<li>Artillery</li>
+			</buildingTags>
+		</building>
+		<designationHotKey>Misc1</designationHotKey>
+		<tradeTags>
+			<li>CE_Turret</li>
+		</tradeTags>
+		<minifiedDef>MinifiedTurretGun</minifiedDef>
+		<thingCategories>
+			<li>BuildingsSecurity</li>
+		</thingCategories>
+		 <thingSetMakerTags>
+      <li>RewardStandardCore</li>
+    </thingSetMakerTags>
+		<researchPrerequisites>
+			<li>Servo_C3</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+	</ThingDef>	
+	
+	<ThingDef ParentName="BuildingBase">
+    <defName>ShieldGeneratorServo</defName>
+    <label>Псионичиский щит</label>
+    <description>Одарёный псионик что был переработан в сервитора прикрывает базу ментальным щитом.</description>
+    <size>(3,3)</size>
+    <graphicData>
+       <texPath>Things/Building/Turrets/RetrFull</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3, 3)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+   	 <drawerType>MapMeshAndRealTime</drawerType>
+    <pathCost>42</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <canOverlapZones>false</canOverlapZones>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <thingCategories>
+      <li>BuildingsSpecial</li>
+    </thingCategories>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Mass>150</Mass>
+    </statBases>
+    <tickerType>Normal</tickerType>
+  
+    <costList>
+      <Steel>100</Steel>
+      <ComponentSpacer>6</ComponentSpacer>
+    </costList>
+    <comps>
+     <li Class="CompProperties_Flickable"/>
+		<li Class="CompProperties_Breakdownable"/>
+	  <li Class="CompProperties_ProjectileInterceptor">
+        <radius>10</radius>
+        <interceptGroundProjectiles>true</interceptGroundProjectiles>
+        <color>(0.3, 0.9, 0.3)</color>
+        <reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
+        <activeSound>BulletShield_Ambience</activeSound>
+			<disarmedByEmpForTicks>1080</disarmedByEmpForTicks>
+				<chargeIntervalTicks>600000</chargeIntervalTicks>
+				<chargeDurationTicks>60000</chargeDurationTicks>
+      </li>
+	     <li Class="CompProperties_Glower">
+				<glowRadius>4</glowRadius>
+				<glowColor>(180,197,215,0)</glowColor>
+			</li>
+			<li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> <!-- 60k ticks = 1 day, 10 hp per day -->
+      </li>
+    </comps>
+    <thingSetMakerTags>
+      <li>RewardStandardCore</li>
+    </thingSetMakerTags>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <tradeability>Sellable</tradeability>
+    <tradeTags>
+      <li>ExoticBuilding</li>
+    </tradeTags>
+  </ThingDef>
+
+
+
+  <ThingDef Abstract="True" Name="ServoScannerBase" ParentName="BuildingBase">
+    <thingClass>Building_SubcoreScanner</thingClass>
+    <containedPawnsSelectable>true</containedPawnsSelectable>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.3</fillPercent>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+      <drawSize>(3,2)</drawSize>
+      <shadowData>
+        <volume>(3, 2, 1.9)</volume>
+      </shadowData>
+    </graphicData>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <buildingTags>
+        <li>Biotech</li>
+      </buildingTags>
+      <subcoreScannerFixedIngredients>
+	  <li>
+				<filter>
+					<thingDefs>
+						<li>SyntheticFibers</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Glass</li>
+					</thingDefs>
+				</filter>
+				<count>15</count>
+			</li>
+	  <li>
+        <filter>
+          <thingDefs>
+           <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+      </subcoreScannerFixedIngredients>
+    </building>
+    <designationCategory>Biotech</designationCategory>
+    <uiOrder>2430</uiOrder>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(3,2)</size>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <statBases>
+      <Mass>25</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>150</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+  </ThingDef>
+
+
+ <ThingDef ParentName="ServoScannerBase">
+    <defName>SubcoreServitor</defName>
+    <label>Истязатель v2.1</label>
+    <description>Робот хирург что превращает пациента в Сервитора,машины-полурабы из живой плоти и металла, существа без индивидуального разума, которые повинуются запрограммированным командам без лишних вопросов.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/SubcoreRipscanner2</texPath>
+    </graphicData>
+    <statBases>
+      <WorkToBuild>1200</WorkToBuild>
+      <MaxHitPoints>250</MaxHitPoints>
+    </statBases>
+	 <stuffCategories>
+			<li>RuggedMetallic</li>
+		</stuffCategories>
+		<costStuffCount>100</costStuffCount>
+    <costList>
+	<ElectronicComponents>2</ElectronicComponents>
+      <Plasteel>50</Plasteel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+      <li>Servo</li>
+    </researchPrerequisites>
+    <building>
+      <subcoreScannerOutputDef>ServitorPak</subcoreScannerOutputDef>
+      <subcoreScannerStartEffect>SubcoreRipscanner_Start</subcoreScannerStartEffect>
+      <destroyBrain>true</destroyBrain>
+      <subcoreScannerWorking>SubcoreRipscanner_Working</subcoreScannerWorking>
+      <subcoreScannerComplete>SubcoreRipscanner_Complete</subcoreScannerComplete>
+	  <subcoreScannerHediff>DeathAcidifier</subcoreScannerHediff>
+    </building>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+  </ThingDef>
+  
+  
+  
+  <!-- 
+	<ThingDef ParentName="TurretBaseServo">
+		<defName>Turret_Mini303F</defName>
+		<label>Мини турель.303</label>
+		<graphicData>
+			<texPath>Things/Building/Security/TurretImprovised</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(0.27,0.25,0.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>Things/Building/Security/TurretImprovised_ico</uiIconPath>
+		<statBases>
+			<Flammability>1.0</Flammability>
+			<WorkToBuild>800</WorkToBuild>
+			<Mass>25</Mass>
+			<Bulk>15</Bulk>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>120</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<description>Миниатюрная турель под 303 патрон. Requires 120 W to function.\nCaliber: .303mm</description>
+		<stuffCategories>
+			<li>RuggedMetallic</li>
+		</stuffCategories>
+		<costStuffCount>100</costStuffCount>
+		<costList>
+			<SentryTurret_Crate>1</SentryTurret_Crate>
+		</costList>
+		<designationCategory>Security</designationCategory>
+		<building>
+			<ai_combatDangerous>false</ai_combatDangerous>
+			<turretGunDef>Gun_Mini303A</turretGunDef>
+			<turretTopDrawSize>4</turretTopDrawSize>
+		</building>
+		<designationHotKey>Misc1</designationHotKey>
+		<tradeTags>
+			<li>CE_Turret</li>
+		</tradeTags>
+		<minifiedDef>MinifiedTurretGun</minifiedDef>
+		<thingCategories>
+			<li>BuildingsSecurity</li>
+		</thingCategories>
+		<researchPrerequisites>
+			<li>GunTurrets</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+	</ThingDef>
+	
+	
+	-->
+	
+	
+	<ThingDef ParentName="BuildingBase">
+    <defName>brainServo</defName>
+    <label>Суб Мозг</label>
+    <description>Мозг со стёртой личностью, чистая вычислительная мощность.</description>
+    <size>(1,1)</size>
+    <graphicData>
+       <texPath>Things/Building/Turrets/Brain</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.2,1.2)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+   	 <drawerType>MapMeshAndRealTime</drawerType>
+    <pathCost>42</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <canOverlapZones>false</canOverlapZones>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <thingCategories>
+      <li>BuildingsSpecial</li>
+    </thingCategories>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Mass>150</Mass>
+    </statBases>
+    <tickerType>Normal</tickerType>
+  
+    <costList>
+    <Glass>50</Glass>
+	<ElectronicComponents>7</ElectronicComponents>
+	<ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <comps>
+     <li Class="CompProperties_Flickable"/>
+		<li Class="CompProperties_Breakdownable"/>
+		<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>true</shortCircuitInRain>
+				<basePowerConsumption>280</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Facility">
+				<statOffsets>
+					<ResearchSpeedFactor>0.3</ResearchSpeedFactor>
+				</statOffsets>
+				<maxSimultaneous>1</maxSimultaneous>
+			</li>
+    </comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+    <thingSetMakerTags>
+      <li>RewardStandardCore</li>
+    </thingSetMakerTags>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <tradeability>Sellable</tradeability>
+    <tradeTags>
+      <li>ExoticBuilding</li>
+    </tradeTags>
+  </ThingDef>
+
+</Defs>
